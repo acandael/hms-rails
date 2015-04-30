@@ -1,5 +1,7 @@
+<%= button_to "Add News Article", new_admin_news_article_path, method: "get" %>
+
 <ul>
   <% @news_articles.each do |article| %>
-    <li><%= article.title %></li>
+    <li><%= link_to article.title, admin_news_article_path(article) %></li>
   <% end %>
 </ul>

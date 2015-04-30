@@ -1,0 +1,8 @@
+<article class="news_article">
+<header>
+  <h1><%= @news_article.title %></h1
+  <p class="date"><%= @news_article.created_at.strftime('%d %B %Y') %></p>
+</header>
+<p><%= @news_article.body %></p>
+<p><%= link_to @news_article.link %></p>
+</article>
