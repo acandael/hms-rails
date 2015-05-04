@@ -1,10 +1,16 @@
+<section class="admin">
+<header>
+  <h1>News Articles</h1>
+</header>
 <%= button_to "Add News Article", new_admin_news_article_path, method: "get" %>
-
-<ul>
-  <% @news_articles.each do |article| %>
-    <li><%= link_to article.title, admin_news_article_path(article) %>
-    <%= link_to "Edit", edit_admin_news_article_path(article) %>
-    <%= link_to "Delete", admin_news_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </li>
-  <% end %>
-</ul>
+<table>
+  <tbody>
+    <% @news_articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, admin_news_article_path(article) %></td>
+        <td><%= link_to "Edit", edit_admin_news_article_path(article) %> | <%= link_to "Delete", admin_news_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>
