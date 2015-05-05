@@ -20,7 +20,7 @@
         <p><%= truncate(article.body, length:90, separator: ' ') %></p>
       <% end %>
     </div>
-    <p class="all"><a href="/news.html">read all news</a></p>
+    <p class="all"><%= link_to "read all news", news_articles_path %></p>
   </div>
   <div class="bullets">
     <div class="bullet two-col-bullet">
