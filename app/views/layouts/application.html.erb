@@ -22,7 +22,12 @@
     </p>
   <% end %>
 </div>
+<div id="main" role="main" class="texture-normal">
+<%= render 'layouts/header' %>
 <%= yield %>
+<div class="push"></div>
+</div>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
