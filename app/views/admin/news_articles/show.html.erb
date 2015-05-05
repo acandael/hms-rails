@@ -20,6 +20,12 @@
       </p>
     </div>
     <div class="property">
+      <p><strong>Image:</strong></p>
+      <p>
+        <%= image_tag attachment_url(@news_article, :image, :fill, 150, 150) %>
+      </p>
+    <div>
+    <div class="property">
       <p><strong>Link:</strong></p>
       <p>link: <%= link_to @news_article.link, @news_article.link %></p>
     </div>

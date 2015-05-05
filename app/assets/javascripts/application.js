@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.matchHeight-min.js
+//= require refile
+//= require custom_refile
+//= require image_uploads
 //= require_tree .

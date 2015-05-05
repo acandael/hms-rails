@@ -10,6 +10,7 @@ describe "admin views newsarticle" do
     expect(page).to have_text newsarticle.title
     expect(page).to have_text newsarticle.created_at.strftime('%d %B %Y')
     expect(page).to have_text newsarticle.body
+    expect(page).to have_selector("img[src$='#{newsarticle.image}']")
     expect(page).to have_text newsarticle.link
   end
 end

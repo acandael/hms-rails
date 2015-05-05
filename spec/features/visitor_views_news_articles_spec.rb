@@ -24,6 +24,7 @@ describe "viewing the news articles" do
     expect(current_path).to eq(news_article_path(article))
     expect(page).to have_text(article.title)
     expect(page).to have_text(article.body)
+    expect(page).to have_selector("img[src$='#{article.image}']")
     expect(page).to have_text(article.link)
     expect(page).to have_text(article.created_at.strftime('%d %B %Y'))
   end

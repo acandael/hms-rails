@@ -45,6 +45,6 @@ class Admin::NewsArticlesController < ApplicationController
   end
 
   def news_article_params
-    params.required(:news_article).permit(:title, :body, :link)
+    params.required(:news_article).permit(:title, :body, :image, :image_cache_id, :remove_image, :link)
   end
 end

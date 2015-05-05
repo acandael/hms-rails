@@ -36,6 +36,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bourbon', '~> 4.2.2'
 gem 'neat', '~> 1.7.2'
 
+# file uploading
+gem "mini_magick"
+gem 'refile', '~> 0.5.4', require: ["refile/rails", "refile/image_processing"]
+gem "aws-sdk", '< 2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
