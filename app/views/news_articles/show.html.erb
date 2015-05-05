@@ -15,7 +15,7 @@
       <p><i class="fa fa-download left"></i><%= link_to @article.document_filename, attachment_url(@article, :document) %></p>
     <% end %>
     <% if @article.link.present? %>
-      <p><i class="fa fa-link left"></i>website: <%= link_to @article.link %></p>
+      <p><i class="fa fa-link left"></i>website: <%= link_to @article.link, @article.link %></p>
     <% end %>
   </div>
   <aside>
