@@ -1,0 +1,27 @@
+<%= form_for [:admin, @news_article], :html => { class: "admin-add" } do |f| %>
+  <header>
+    <h1><i class="fa fa-newspaper-o"></i>
+      <% if @news_article.new_record? %>
+        New News Article</h1>
+      <% else %>
+        Edit News Article 
+      <% end %>
+    </h1>
+  </header>
+  <%= render "shared/errors", object: @news_article %>
+  <div>
+    <%= f.label :title, autofocus: true %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

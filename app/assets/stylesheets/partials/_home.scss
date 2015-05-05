@@ -1,0 +1,218 @@
+section.home {
+    .hero {
+    $hero-background-top: lighten($green, 5); 
+    $hero-background-bottom: adjust-hue($hero-background-top, -5);
+    $hero-color: white;
+    $gradient-angle: 10deg;
+
+    @include background(linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+
+    margin-top: em(20);
+    margin-bottom: em(60);
+    //padding-bottom: 1em;
+
+    @include media($medium-screen) {
+      @include span-columns(8);
+    }
+
+
+    .hero-inner {
+      .hero-logo img {
+        float: left;
+        display: none;
+        @include media($medium-screen) {
+          display: block;
+          margin-top: em(50);
+        }
+      }
+      @include outer-container;
+      //@include clearfix;
+      padding: 2em;
+      padding-bottom: 1em;
+      margin: auto;
+      text-align: center;
+      color: $hero-color;
+
+      @include media($medium-screen) {
+        padding: 3em;
+      }
+
+      button {
+        @include button(simple, $green);
+        font-size: $base-font-size;
+        outline: none;
+      }
+
+      .hero-copy {
+        @include media($medium-screen) {
+          text-align: right;
+          overflow: hidden;
+        }
+        
+        h1 {
+          font-size: 1.2em;
+          margin-bottom: .5em;
+          text-align: left;
+
+          @include media($medium-screen) {
+            text-align: center;
+            font-size: 1.8em;
+          }
+        }
+
+        p {
+          text-align: left;
+          font-family: $serif;
+          margin: auto;
+          margin-bottom: 1em; 
+          font-weight: 200;
+          line-height: 1.4em;
+
+          @include media($medium-screen) {
+            font-size: 1.1em;
+            margin-left: em(20);
+          }
+        }
+      }
+    }
+  } // end of hero
+
+  .news {
+    position: relative;
+    margin-top: em(20);
+    @include media($medium-screen) {
+      @include span-columns(4);
+      @include omega();
+      min-height: 283px;
+    }
+    
+    time {
+      font-style: italic;
+    }
+
+    background-color: white;
+    box-shadow: 0 1px 4px 1px $light-gray;
+
+    .news-inner {
+      padding-top: .75em;
+      padding-bottom: .75em;
+      margin-bottom: em(20);
+      padding-left: 1em;
+      padding-right: 1em;
+      @include media($medium-screen) {
+        padding-left: 1.75em;
+      }
+      h2 {
+        font-size: $base-font-size * 1.2;
+        text-align: center;
+        @include media($medium-screen) {
+          font-size: $base-font-size * 2;
+        }
+      }
+      p {
+        margin-top: em(10);
+        @include media($medium-screen) {
+          padding-right: em(10);
+        }
+      }
+    }
+    
+    .all {
+      text-align: right;
+      margin-right: em(20);
+      //margin-bottom: em(20);
+      padding-bottom: em(10);
+      @include media($medium-screen) {
+        position: absolute;
+        right: em(20);
+        bottom: 0px;
+      }
+    }
+  } // end of news
+  .bullets {
+    $icon-bullet-size: 3.5em;
+
+    overflow: hidden;
+    clear: both;
+    @include clearfix;
+    margin-top: em(40);
+    //margin-bottom: $base-line-height;
+
+    
+    .two-col-bullet {
+      background: white;
+      padding: 1em;
+      box-shadow: 0 1px 4px 1px $light-gray;
+      margin-bottom: em(40);
+      @include media($medium-screen) {
+        @include span-columns(6);
+        @include omega(2n);  
+        margin-bottom: 0;
+      } 
+    }
+    
+    
+  // change ".three-col-bullet" class to this for two bullet layout
+    .three-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+
+    
+  // change ".three-col-bullet" class to this for four bullet layout
+    .four-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+
+    .bullet-icon {
+      float: left;
+      background: $action-color;
+      padding: $icon-bullet-size /4;
+      padding-top: .5em;
+      border-radius: 50%;
+      width: $icon-bullet-size;
+      height: $icon-bullet-size;
+      display: none;
+      @include media($medium-screen) {
+        display: block;
+      }
+    }
+
+    .bullet-icon-1 {
+      background: $action-color;
+    }
+
+    .bullet-icon-2 {
+      background: adjust-hue($action-color, -50);
+    }
+
+    .bullet-icon-3 {
+      background: adjust-hue($action-color, -140);
+    }
+
+    .bullet-content {
+      margin-bottom: 2em;
+      @include media($medium-screen) {
+        margin-left: $icon-bullet-size *1.4;
+      }
+    }
+
+    h2 {
+      font-size: $icon-bullet-size /2.5;
+      padding-top: $icon-bullet-size /7;
+      margin-bottom: $icon-bullet-size /6;
+      border-bottom: 1px solid transparentize($base-font-color, .8);
+      display: inline-block;
+    }
+  } // end of bullets  
+} // end of section

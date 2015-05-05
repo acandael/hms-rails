@@ -1,0 +1,72 @@
+<section class="home">
+  <div data-mh="row1" class="hero">
+    <div class="hero-inner">
+        <span class="hero-logo"><%= image_tag "logo-without-text-126x194.png" %></span>
+      <div class="hero-copy">
+        <h1>Health, Media &amp; Society</h1>
+        <p>Health, Media &amp; Society is a research centre at Ghent University created in response to the project "(De)constructing Health News".</p><p>Based on a collaboration between communication studies, sociolinguistics, sociology and medical science, the focus is set on the question how news media construct health issues.</p>	
+      </div>
+      <form action="/mission.html" method="get">
+      <button>Read More</button>
+    </form>
+    </div>
+  </div>
+  <div data-mh="row1" class="news">
+    <div class="news-inner">
+      <h2>News</h2>
+      <% @articles.each do |article| %>
+        <p><a href="/24-hours-of-communication-science.html"><%= article.title %></a><br />
+        posted on <time datetime="<%= article.created_at %>"><%= article.created_at.strftime('%d %B %Y') %></time></p>
+        <p><%= truncate(article.body, length:90, separator: ' ') %></p>
+      <% end %>
+    </div>
+    <p class="all"><a href="/news.html">read all news</a></p>
+  </div>
+  <div class="bullets">
+    <div class="bullet two-col-bullet">
+      <div class="bullet-icon bullet-icon-1">
+        <%= image_tag "logo-small-28x42.png" %>
+      </div>
+      <div class="bullet-content">
+        <h2><a href="/stakeholder-analysis.html">Stakeholder analysis</a></h2>
+        <p>This research line aims to chart the organizations that are active in the broad field of health issues in Flanders.</p>
+        <p>Secondly, it explores the discourses on health problems as articulated by these various interest groups.</p>
+        </div>
+    </div>  
+    <div class="bullet two-col-bullet">
+      <div class="bullet-icon bullet-icon-2">
+        <%= image_tag "logo-small-28x42.png" %>
+      </div>
+      <div class="bullet-content">
+        <h2><a href="/news-story-lifecycle-analysis.html">News story lifecycle analysis</a></h2>
+        <p>The second line of research focuses on the (production) lifecycle of news stories on health issues as they travel back and forth among the stakeholders</p>
+      </div>
+    </div>
+  </div>
+  <div class="bullets">
+    <div class="bullet two-col-bullet">
+      <div class="bullet-icon bullet-icon-1">
+        <%= image_tag "logo-small-28x42.png" %>
+      </div>
+      <div class="bullet-content">
+        <h2><a href="/news-sourcing-frame-discourse-analysis.html">News sourcing, frame and discourse analysis</a></h2>
+        <p>This research line focuses on the final news content by monitoring how a wide range of Flemish news media cover health-related information.</p>
+        </div>
+    </div>  
+    <div class="bullet two-col-bullet">
+      <div class="bullet-icon bullet-icon-2">
+        <%= image_tag "logo-small-28x42.png" %>
+      </div>
+      <div class="bullet-content">
+        <h2><a href="/audience-research.html">Audience Research</a></h2>
+        <p>The audience-oriented research line is to be situated at the receiver’s end of the health discourse chain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function () {
+    $('.bullet').matchHeight();
+  });
+</script>

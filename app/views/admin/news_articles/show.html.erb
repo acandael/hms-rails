@@ -1,8 +1,27 @@
-<article class="news_article">
-<header>
-  <h1><%= @news_article.title %></h1
-  <p class="date"><%= @news_article.created_at.strftime('%d %B %Y') %></p>
-</header>
-<p><%= @news_article.body %></p>
-<p><%= link_to @news_article.link %></p>
-</article>
+<section class="admin-show">
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "All News", admin_news_articles_path %>
+    <a href="#"><%= @news_article.title %></a> 
+  </div>
+  <article class="news-article">
+    <header>
+      <h1><%= @news_article.title %></h1
+      <p class="date"><%= @news_article.created_at.strftime('%d %B %Y') %></p>
+    </header>
+    <div class="property">
+      <p><strong>Title:</strong></p>
+      <p><%= @news_article.title %></p>
+    </div>
+    <div class="property">
+      <p><strong>Body:</strong></p>
+      <p>
+      <%= @news_article.body %>
+      </p>
+    </div>
+    <div class="property">
+      <p><strong>Link:</strong></p>
+      <p>link: <%= link_to @news_article.link, @news_article.link %></p>
+    </div>
+  </article>
+</section>

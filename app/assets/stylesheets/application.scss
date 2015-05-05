@@ -1,3 +1,10 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
+
+@import "partials/layout";
+@import "partials/home";
+@import "partials/breadcrumb";
+@import "partials/admin";
+@import "partials/admin-add";
+@import "partials/admin-show";

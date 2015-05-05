@@ -1,0 +1,7 @@
+section.admin-show {
+  @include outer-container;
+  .property {
+    margin-top: em(24);
+    margin-bottom: em(24);
+  }
+}
