@@ -1,0 +1,21 @@
+<article class="news-item">
+  <div class="breadcrumb">
+    <a href="/news.html">News</a>
+    <a href="javascript:void(0)"><%= @article.title %></a>
+  </div>
+  <header>
+    <h1><%= @article.title %>
+  </header>
+  <footer>
+    <p>Posted on <time datetime="<%= @article.created_at %>"><%= @article.created_at.strftime('%d %B %Y') %></time></p>
+  </footer>
+  <div class="content">
+    <p><%= @article.body %></p>
+    <% if @article.link.present? %>
+      <p>website: <%= link_to @article.link %></p>
+    <% end %>
+  </div>
+  <aside>
+    &nbsp;
+  </aside>
+</article>

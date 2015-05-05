@@ -15,7 +15,7 @@
     <div class="news-inner">
       <h2>News</h2>
       <% @articles.each do |article| %>
-        <p><a href="/24-hours-of-communication-science.html"><%= article.title %></a><br />
+        <p><%= link_to article.title, news_article_path(article) %><br />
         posted on <time datetime="<%= article.created_at %>"><%= article.created_at.strftime('%d %B %Y') %></time></p>
         <p><%= truncate(article.body, length:90, separator: ' ') %></p>
       <% end %>
