@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bourbon', '~> 4.2.2'
 gem 'neat', '~> 1.7.2'
 
+# Font Awesome
+gem 'font-awesome-rails', '~> 4.3.0.0'
+
 # file uploading
 gem "mini_magick"
 gem 'refile', '~> 0.5.4', require: ["refile/rails", "refile/image_processing"]

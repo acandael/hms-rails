@@ -12,7 +12,7 @@
   <div class="content">
     <p><%= @article.body %></p>
     <% if @article.link.present? %>
-      <p>website: <%= link_to @article.link %></p>
+      <p><i class="fa fa-link"></i>website: <%= link_to @article.link %></p>
     <% end %>
   </div>
   <aside>
