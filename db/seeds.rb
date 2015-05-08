@@ -32,3 +32,28 @@ NewsArticle.create!([
     link: 'http://www.cjs.ugent.be'
   }
 ])
+ 
+Member.create!([
+  {
+    name: 'Piet Bracke',
+    email: 'piet.bracke@ugent.be',
+    phone: '09 264 91 89',
+    address: %{Vakgroep Communicatiewetenschappen Korte Meer 11,                                     9000 Gent}.squish,
+    bio: %{Piet Bracke is a full professor at the Department of Sociology at Ghent University.}.squish
+  },
+  {
+    name: 'Sarah Van Leuven',
+    email: 'sarah.vanleuven@ugent.be',
+    phone: '32 9 264 67 98',
+    address: %{Department of Media Studies, 9000 Gent}.squish,
+    bio: %{Sarah Van Leuven is the postdoctoral research coordinator of Health, Media & Society. She is also a member of the Center for Journalism Studies (CJS).}.squish
+  },
+  {
+    name: 'Geert Jacobs',
+    email: 'geer.jacobs@ugent.be',
+    phone: '32 9 264 34 56',
+    address: %{Departement of Marketing, 3000 Leuven}.squish,
+    bio: %{
+Geert Jacobs received a PhD in Linguistics in 1997 from the University of Antwerp, where he wrote a dissertation on the metapragmatics of press releases.}.squish
+  }
+])

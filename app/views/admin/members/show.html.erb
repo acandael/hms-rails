@@ -1,0 +1,34 @@
+<section class="admin-show">
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "Members", admin_members_path %>
+    <a href="#"><%= @member.name %></a> 
+  </div>
+  <article>
+    <header>
+      <h1>Member</h1>
+    </header>
+    <div class="property">
+      <p><strong>Name</strong></p>
+      <p>
+        <%= @member.name %>
+      </p>
+    </div>
+    <div class="property">
+      <p><strong>Email</strong></p>
+      <p><%= mail_to @member.email %>
+    </div>
+    <div class="property">
+      <p><strong>Phone</strong></p>
+      <p><%= @member.phone %></p>
+    </div>
+    <div class="property">
+      <p><strong>Address</strong></p>
+      <p><%= @member.address %></p>
+    </div>
+    <div class="property">
+      <p><strong>Biography</strong></p>
+      <p><%= @member.bio %></p>
+    </div>
+  </article>
+</section>
