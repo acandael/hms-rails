@@ -1,14 +1,3 @@
-<%= form_for [:admin, @member], :html => { class: "admin-add" } do |f| %>
-  <%= render "shared/errors", object: @member %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-  <%= f.label :address %>
-  <%= f.text_area :address %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
-  <%= f.submit %>
-<% end %>
+<section class="admin-add">
+  <%= render 'form' %>
+</section>
