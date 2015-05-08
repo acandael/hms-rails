@@ -1,0 +1,28 @@
+<article class="researcher">
+    <div class="breadcrumb">
+      <a href="/people.html">People</a>
+      <a href="javascript:void(0)"><%= @member.name %></a>
+    </div>
+    <header>
+      <h1><%= @member.name %></h1>
+    </header>
+    <aside>
+      <%= image_tag attachment_url(@member, :image, :fill, 250, 250) %>
+    </aside>
+    <div class="content">
+      <p><%= @member.bio %></p>
+      <h2>Research</h2>
+      <ul>
+        <li><a href="/stakeholder-analysis.html">Stakeholder analysis</a></li>
+      </ul>
+      <h2>Publications</h2>
+      <p><a href="https://biblio.ugent.be/publication?q=%22piet+bracke%22">Ghent University Academic Bibliography</a><i class="fa fa-external-link right"></i></p>
+      <h2>Contact</h2>
+      <p>
+      <i class="fa fa-envelope left"></i><%= mail_to @member.email %> <br />
+      <i class="fa fa-phone left"></i> <a href="tel:<%= @member.phone %>"><%= @member.phone %></a><br />
+    <i class="fa fa-home left"></i>  
+    <%= @member.address %>
+      </p>
+    </div>
+  </article>

@@ -36,6 +36,7 @@ NewsArticle.create!([
 Member.create!([
   {
     name: 'Piet Bracke',
+    title: 'Professor',
     email: 'piet.bracke@ugent.be',
     phone: '09 264 91 89',
     address: %{Vakgroep Communicatiewetenschappen Korte Meer 11,                                     9000 Gent}.squish,
@@ -43,6 +44,7 @@ Member.create!([
   },
   {
     name: 'Sarah Van Leuven',
+    title: 'Postdoctoral Researcher',
     email: 'sarah.vanleuven@ugent.be',
     phone: '32 9 264 67 98',
     address: %{Department of Media Studies, 9000 Gent}.squish,
@@ -50,6 +52,7 @@ Member.create!([
   },
   {
     name: 'Geert Jacobs',
+    title: 'Professor',
     email: 'geer.jacobs@ugent.be',
     phone: '32 9 264 34 56',
     address: %{Departement of Marketing, 3000 Leuven}.squish,

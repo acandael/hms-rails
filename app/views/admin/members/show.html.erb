@@ -9,6 +9,12 @@
       <h1>Member</h1>
     </header>
     <div class="property">
+      <p><strong>Image:</strong></p>
+      <p>
+        <%= image_tag attachment_url(@member, :image, :fill, 150, 150) %>
+      </p>
+    </div>
+    <div class="property">
       <p><strong>Name</strong></p>
       <p>
         <%= @member.name %>

@@ -1,0 +1,21 @@
+<article class="people">
+<header>
+  <h1>People</h1>
+</header>
+  <div class="content">
+    <p>A holistic, start-to-end approach to the way health issues are dealt with in the news media is ambitious and multi-faceted, and it requires a so-called transdisciplinary perspective.</p>
+    <p>The Health, Media &amp; Society group brings together the complementary expertise of Ghent University researchers in the areas of communication studies and journalism, media discourse analysis, health sociology and health communication and, likewise, it will consider the achievements from the different perspectives that we represent.</p>
+  </div>
+  <%= image_tag "health-media-society-researchers.jpg", alt: "researchers health media & society" %>
+</article>
+<div class="members">
+  <% @members.each do |member| %>
+  <div class="member">
+    <%= link_to member_path(member) do %>
+      <%= image_tag attachment_url(member, :image, :fill, 250, 250) %> 
+    <% end %>
+    <h5><%= link_to member.name, member_path(member) %></h5>
+    <p><%= member.title %></p>
+  </div>
+  <% end %>
+</div>
