@@ -1,6 +1,7 @@
-<%= form_for [:admin, @publication], :html => { class: "admin-add" } do |f| %>
-  <%= render "shared/errors", object: @publication %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<% end %>
+<h1>Edit publication</h1>
+<div class="breadcrumb">
+  <%= link_to "Dashboard", admin_path %>
+  <%= link_to "All Publications", admin_publications_path %>
+  <a href="#">Edit Publication</a>
+</div>
+<%= render 'form' %>

@@ -1,6 +1,3 @@
-<%= form_for [:admin, @publication], :html => { class: "admin-add" } do |f| %>
-  <%= render "shared/errors", object: @publication %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<% end %>
+<section class="admin-add">
+  <%= render 'form' %>
+</section>

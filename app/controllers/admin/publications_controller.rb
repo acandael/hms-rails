@@ -38,6 +38,6 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:title, :documemt, :remove_document)
+    params.required(:publication).permit(:title, :document, :remove_document)
   end
 end
