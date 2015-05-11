@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe "admin views newsarticle" do
+
+  let(:user) { User.create!(user_attributes) } 
+
+  before do
+    sign_in(user)
+  end
+
   it "sees the newsarticle details" do
     newsarticle = NewsArticle.create!(newsarticle_attributes)
     

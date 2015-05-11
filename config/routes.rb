@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'admin', to: 'dashboard#index'
   get 'people', to: 'members#index', as: 'people'
   get 'member/:id', to: 'members#show', as: 'member'
+  get 'signin', to: 'sessions#new'
+
+  resource :session
 
   namespace :admin do
     resources :news_articles

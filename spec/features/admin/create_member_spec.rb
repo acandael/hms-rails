@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 feature 'Creating a member' do
+
+  let(:user) { User.create!(user_attributes) } 
+
+  before do
+    sign_in(user)
+  end
+
   it 'shows a new member and displays a success message' do
     visit admin_members_path
     click_button 'Add Member'

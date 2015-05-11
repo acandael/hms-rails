@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe "Creating a news article" do
+
+  let(:user) { User.create!(user_attributes) } 
+
+  before do
+    sign_in(user)
+  end
+
   it "saves the news article" do
     visit admin_news_articles_path
     click_button "Add News Article"

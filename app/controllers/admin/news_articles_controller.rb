@@ -1,4 +1,4 @@
-class Admin::NewsArticlesController < ApplicationController
+class Admin::NewsArticlesController < DashboardController
   before_action :set_news_article, only: [:show, :edit, :update, :destroy]
   def index
     @news_articles = NewsArticle.all

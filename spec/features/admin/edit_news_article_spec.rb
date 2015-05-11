@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe "Editing a news article" do
+
+  let(:user) { User.create!(user_attributes) } 
+
+  before do
+    sign_in(user)
+  end
+
   it "updates the news article" do
     article = NewsArticle.create!(newsarticle_attributes)
     visit admin_news_articles_path

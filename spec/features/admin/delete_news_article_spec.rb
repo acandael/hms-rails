@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe "Deleting news article" do
+
+  let(:user) { User.create!(user_attributes) } 
+
+  before do
+    sign_in(user)
+  end
+
   it "deletes the news article from the list" do
     article = NewsArticle.create!(newsarticle_attributes)
     visit admin_news_articles_path
