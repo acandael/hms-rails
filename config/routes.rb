@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :news_articles
     resources :members
+    resources :publications
   end
 end
