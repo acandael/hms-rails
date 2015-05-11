@@ -6,6 +6,7 @@ feature 'Creating a member' do
     click_button 'Add Member'
 
     fill_in "Name", with: "Piet Bracke"
+    fill_in "Title", with: "Professor"
     fill_in "Email", with: "piet.bracke@ugent.be"
     fill_in "Phone", with: "32 (0)9 264 68 64"
     fill_in "Address", with: "Department of Sociology Korte Meer 5, 9000 Ghent (Belgium)"
@@ -21,6 +22,7 @@ feature 'Creating a member' do
     click_button 'Add Member'
 
     fill_in "Name", with: ""
+    fill_in "Title", with: "Professor"
     fill_in "Email", with: "piet.bracke@ugent.be"
     fill_in "Phone", with: "32 (0)9 264 68 64"
     fill_in "Address", with: "Department of Sociology Korte Meer 5, 9000 Ghent (Belgium)"
