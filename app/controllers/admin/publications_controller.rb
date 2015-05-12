@@ -3,6 +3,10 @@ class Admin::PublicationsController < DashboardController
     @publications = Publication.all
   end
 
+  def show
+    @publication = Publication.find(params[:id])
+  end
+
   def new
     @publication = Publication.new
   end
@@ -38,6 +42,6 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:title, :document, :remove_document)
+    params.required(:publication).permit(:title, :document, :remove_document, :member_ids => [])
   end
 end

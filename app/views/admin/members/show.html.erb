@@ -42,5 +42,15 @@
       <p><strong>Biography</strong></p>
       <p><%= @member.bio %></p>
     </div>
+    <% if @member.publications.any? %>
+    <div class="property">
+      <p><strong>Publications:</strong></p>
+      <ul>
+        <% @member.publications.each do |publication| %>
+          <li><%= publication.title %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
   </article>
 </section>

@@ -14,4 +14,5 @@ describe 'viewing the publications' do
     expect(current_path).to eq admin_publications_path
     expect(page).to have_text publication.title
   end
+
 end

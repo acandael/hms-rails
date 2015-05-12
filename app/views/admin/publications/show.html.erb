@@ -1,0 +1,38 @@
+<section class="admin-show">
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "Publications", admin_publications_path %>
+    <a href="#"><%= @publication.title %></a> 
+  </div>
+  <article>
+    <header>
+      <h1><%= @publication.title %></h1>
+    </header>
+    <div class="property">
+      <p><strong>Created at:</strong></p>
+      <p><%= @publication.created_at.strftime('%d %B %Y') %></p>
+    </div>
+    <div class="property">
+      <p><strong>Title:</strong></p>
+      <p><%= @publication.title %></p>
+    </div>
+    <% if @publication.members.any? %>
+    <div class="property">
+      <p><strong>Authors:</strong></p>
+      <ul>
+        <% @publication.members.each do |member| %>
+          <li><%= member.name %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <% if @publication.document_id %>
+    <div class="property attachment">
+      <p><strong>Document:</strong></p>
+      <p>
+        <i class="fa fa-download left"></i><%= link_to @publication.document_filename, attachment_url(@publication, :document) %>
+      </p>
+    </div>
+    <% end %>
+  </article>
+</section>
