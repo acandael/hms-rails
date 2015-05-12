@@ -2,17 +2,19 @@ require 'rails_helper'
 
 describe 'viewing publications page' do
   it 'shows a list of publications' do
-    publication1 = Publication.create!(title: "publication 1")
-    publication2 = Publication.create!(title: "publication 2")
+    publication1 = Publication.create!(title: "publication 1", description: "book review")
+    publication2 = Publication.create!(title: "publication 2", description: "conference presentation")
     piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     publication1.members << piet
 
     visit publications_path
 
     expect(page).to have_text publication1.title
+    expect(page).to have_text publication1.description
     expect(page).to have_text publication1.created_at.strftime('%d %B %Y')
     expect(page).to have_text "Piet Bracke"
     expect(page).to have_text publication2.title
+    expect(page).to have_text publication2.description
   end
 
   it 'shows the member details when clicked' do

@@ -7,7 +7,7 @@
     <article class="publication">
       <header>
         <h1><%= publication.title %></h1>
-        <p class="date"><%= publication.created_at.strftime('%d  %B %Y') %> | Book review | <a href="stakeholder-analysis.html">Stakeholder Analysis</a></p>
+        <p class="date"><%= publication.created_at.strftime('%d  %B %Y') %> | <%= publication.description %> | <a href="stakeholder-analysis.html">Stakeholder Analysis</a></p>
       </header>
       <div class="content">
         <% if publication.members.any? %>
