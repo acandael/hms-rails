@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :news_articles
     resources :members
     resources :publications
+    resources :themes
   end
 end

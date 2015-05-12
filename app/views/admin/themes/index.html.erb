@@ -1,0 +1,20 @@
+<section class="admin">
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <a href="javascript:void(0)">Themes</a>
+  </div>
+  <header>
+    <h1>Themes</h1>
+  </header>
+  <%= button_to "Add Theme", new_admin_theme_path, method: "get" %>
+  <table>
+    <tbody>
+  <% @themes.each do |theme| %>
+    <tr>
+    <td><%= theme.title %></td>
+    <td><%= link_to "Edit", edit_admin_theme_path(theme) %> | <%= link_to "Delete", admin_theme_path(theme), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</section>
+    </tbody>
+  </table>

@@ -16,6 +16,10 @@
       <p><strong>Title:</strong></p>
       <p><%= @publication.title %></p>
     </div>
+    <div class="property">
+      <p><strong>Description:</strong></p>
+      <p><%= @publication.description %></p>
+    </div>
     <% if @publication.members.any? %>
     <div class="property">
       <p><strong>Authors:</strong></p>

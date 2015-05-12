@@ -1,0 +1,20 @@
+<section class="admin-show">
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "Themes", admin_themes_path %>
+    <a href="#"><%= @theme.title %></a> 
+  </div>
+  <article>
+    <header>
+      <h1><%= @theme.title %></h1>
+    </header>
+    <div class="property">
+      <p><strong>Title:</strong></p>
+      <p><%= @theme.title %></p>
+    </div>
+    <div class="property">
+      <p><strong>Description:</strong></p>
+      <p><%= @theme.description %></p>
+    </div>
+  </article>
+</section>
