@@ -15,8 +15,14 @@
       <ul>
         <li><a href="/stakeholder-analysis.html">Stakeholder analysis</a></li>
       </ul>
-      <h2>Publications</h2>
-      <p><a href="https://biblio.ugent.be/publication?q=%22piet+bracke%22">Ghent University Academic Bibliography</a><i class="fa fa-external-link right"></i></p>
+      <% if @member.publications.any? %>
+        <h2>Publications</h2>
+        <ul>
+        <% @member.publications.each do |publication| %>
+          <li><i class="fa fa-download left"></i><%= link_to publication.document_filename, attachment_url(publication, :document) %></li>
+        <% end %>
+        </ul>
+      <% end %>
       <h2>Contact</h2>
       <p>
       <i class="fa fa-envelope left"></i><%= mail_to @member.email %> <br />
