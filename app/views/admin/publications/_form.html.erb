@@ -1,14 +1,25 @@
 <%= form_for [:admin, @publication], :html => { class: "admin-add" } do |f| %>
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "All Publications", admin_publications_path %>
+    <a href="#">Edit Publication</a>
+  </div>
   <header>
     <h1><i class="fa fa-file-text-o"></i>
       <% if @publication.new_record? %>
-        New News Article</h1>
+        New Publication
       <% else %>
-        Edit News Article 
+        Edit Publication
       <% end %>
     </h1>
   </header>
   <%= render "shared/errors", object: @publication %>
+  <div>
+     <%= f.label "Themes" %>
+     <%= f.collection_check_boxes :theme_ids, Theme.all, :id, :title do |b| %>
+       <%= b.label() { b.check_box + b.text } %>
+     <% end %>
+  </div>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -27,7 +38,7 @@
     <%= f.label :document %>
     <% if @publication.document_id? %>
       <div class="attachment">
-      <i class="fa fa-download"></i><%= link_to @publication.document_filename, attachment_url(@publication, :document)%>
+      <i class="fa fa-download left"></i><%= link_to @publication.document_filename, attachment_url(@publication, :document)%>
       </div>
       <div class="checkbox">
         <%= f.check_box :remove_document %>

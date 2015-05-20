@@ -1,0 +1,12 @@
+<article>
+<header>
+  <h1><%= @theme.title %></h1>
+</header>
+<p><%= @theme.description %></p>
+<p>Menbers:</p>
+<ul>
+  <% @theme.members.each do |member| %>
+    <li><%= member.name %></li>
+  <% end %>
+</ul>
+<article>

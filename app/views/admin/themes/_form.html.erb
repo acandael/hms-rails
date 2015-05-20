@@ -1,0 +1,39 @@
+<%= form_for [:admin, @theme], :html => { class: "admin-add" } do |f| %>
+  <div class="breadcrumb">
+    <%= link_to "Dashboard", admin_path %>
+    <%= link_to "All Themes", admin_themes_path %>
+  </div>
+  <header>
+    <h1>
+    <% if @theme.new_record? %>
+      New Theme
+    <% else %>
+      Edit Theme 
+    <% end %>
+    </h1>
+  </header>
+  <%= render "shared/errors", object: @theme %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+     <%= f.label "Members" %>
+     <%= f.collection_check_boxes :member_ids, Member.all, :id, :name do |b| %>
+       <%= b.label() { b.check_box + b.text } %>
+     <% end %>
+  </div>
+  <div>
+     <%= f.label "Publications" %>
+     <%= f.collection_check_boxes :publication_ids, Publication.all, :id, :title do |b| %>
+       <%= b.label() { b.check_box + b.text } %>
+     <% end %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

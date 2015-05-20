@@ -7,7 +7,7 @@
     <h1>Publications</h1>
   </header>
   <%= button_to "Add Publication", new_admin_publication_path, method: "get" %>
-  <table>
+  <table class="tables">
     <tbody>
       <% @publications.each do |publication| %>
         <tr>

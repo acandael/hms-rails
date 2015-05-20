@@ -16,6 +16,16 @@
       <p><strong>Title:</strong></p>
       <p><%= @publication.title %></p>
     </div>
+    <% if @publication.themes.any? %>
+    <div class="property">
+      <p><strong>Theme</strong></p>
+      <p>
+      <% @publication.themes.each do |theme| %>
+        <%= link_to theme.title, admin_theme_path(theme) %>
+      <% end %>
+      </p>
+    </div>
+    <% end %>
     <div class="property">
       <p><strong>Description:</strong></p>
       <p><%= @publication.description %></p>
@@ -25,7 +35,7 @@
       <p><strong>Authors:</strong></p>
       <ul>
         <% @publication.members.each do |member| %>
-          <li><%= member.name %></li>
+          <li><%= link_to member.name, admin_member_path(member) %></li>
         <% end %>
       </ul>
     </div>

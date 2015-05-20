@@ -7,7 +7,12 @@
     <article class="publication">
       <header>
         <h1><%= publication.title %></h1>
-        <p class="date"><%= publication.created_at.strftime('%d  %B %Y') %> | <%= publication.description %> | <a href="stakeholder-analysis.html">Stakeholder Analysis</a></p>
+        <p class="date"><%= publication.created_at.strftime('%d  %B %Y') %> | <%= publication.description %> | <% if publication.themes.any? %>
+         <% publication.themes.each do |theme| %> 
+           <%= link_to theme.title, theme_path(theme) %>
+         <% end %>
+      <% end %>
+        </p>
       </header>
       <div class="content">
         <% if publication.members.any? %>

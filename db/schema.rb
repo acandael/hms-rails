@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512122458) do
+ActiveRecord::Schema.define(version: 20150520083448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(version: 20150512122458) do
     t.string   "document_filename"
     t.string   "description"
   end
+
+  create_table "theme_members", force: :cascade do |t|
+    t.integer "theme_id"
+    t.integer "member_id"
+  end
+
+  add_index "theme_members", ["member_id"], name: "index_theme_members_on_member_id", using: :btree
+  add_index "theme_members", ["theme_id"], name: "index_theme_members_on_theme_id", using: :btree
+
+  create_table "theme_publications", force: :cascade do |t|
+    t.integer "theme_id"
+    t.integer "publication_id"
+  end
+
+  add_index "theme_publications", ["publication_id"], name: "index_theme_publications_on_publication_id", using: :btree
+  add_index "theme_publications", ["theme_id"], name: "index_theme_publications_on_theme_id", using: :btree
 
   create_table "themes", force: :cascade do |t|
     t.string "title"

@@ -16,5 +16,25 @@
       <p><strong>Description:</strong></p>
       <p><%= @theme.description %></p>
     </div>
+    <% if @theme.members.any? %>
+      <div class="property">
+        <p><strong>Members</strong></p>
+        <ul>
+        <% @theme.members.each do |member| %>
+          <li><%= link_to member.name, admin_member_path(member) %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if @theme.publications.any? %>
+      <div class="property">
+        <p><strong>Publications</strong></p>
+        <ul>
+        <% @theme.publications.each do |publication| %>
+          <li><%= link_to publication.title, admin_publication_path(publication) %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   </article>
 </section>

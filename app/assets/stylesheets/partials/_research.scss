@@ -1,0 +1,97 @@
+article.research {
+  h1 {
+    margin-top: 0;
+    margin-bottom: em(5);
+  }
+  header {
+    margin-top: 0;
+  }
+}
+
+div.bullets {
+  $icon-bullet-size: 3.5em;
+  overflow: auto;
+  margin-bottom: $base-line-height;
+
+  margin-left: em(20);
+  margin-right: em(20);
+
+  @include media($large-screen) {
+    @include outer-container;
+  }
+  .bullet {
+    margin-top: em(20);
+    background: white;
+    padding: 1em;
+    position: relative;
+    box-shadow: 0 1px 4px 1px $light-gray;
+    @include media($medium-screen) {
+      @include span-columns(6);
+      @include omega(2n);
+      margin-top: 0;
+    }
+
+    p.publink {
+      position: absolute;
+      bottom: 5px;
+      right: 0;
+      text-align: right;
+      padding-right: 1em;
+      padding-top: em(20);
+    }
+
+    p > a, li > a {
+      text-decoration: underline;
+    }
+
+    
+
+    .bullet-icon {
+      margin: auto;
+      @include media($medium-screen) {
+        float: left;
+      }
+      background: $action-color;
+      padding: $icon-bullet-size /4;
+      padding-top: .5em;
+      border-radius: 50%;
+      width: $icon-bullet-size;
+      height: $icon-bullet-size;
+      display: none;
+      @include media($medium-screen) {
+        display: block;
+      }
+    }
+
+    .bullet-icon-1 {
+      background: $action-color;
+    }
+
+    .bullet-icon-2 {
+      background: adjust-hue($action-color, -50);
+    }
+    .bullet-content {
+      margin-left: 0;
+      margin-right: 0;
+      @include media($medium-screen) {
+        margin-left: $icon-bullet-size *1.4;
+        margin-bottom: 2em;
+      }
+      h2 {
+        font-size: $icon-bullet-size /2.5;
+        padding-top: $icon-bullet-size /7;
+        margin-bottom: $icon-bullet-size /6;
+        border-bottom: 1px solid transparentize($base-font-color, .8);
+        display: inline-block;
+      }
+      h3 {
+        font-size: $icon-bullet-size /3;
+        margin-top: em(20); 
+        margin-bottom: $icon-bullet-size /9;
+      }
+      ul {
+        margin-bottom: $icon-bullet-size /6;
+      }
+    }
+  }
+}

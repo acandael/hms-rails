@@ -42,6 +42,6 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:title, :description, :document, :remove_document, :member_ids => [])
+    params.required(:publication).permit(:title, :description, :document, :remove_document, :theme_ids => [], :member_ids => [])
   end
 end

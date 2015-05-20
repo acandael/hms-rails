@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'admin', to: 'dashboard#index'
   get 'people', to: 'members#index', as: 'people'
   get 'member/:id', to: 'members#show', as: 'member'
+  get 'themes', to: 'themes#index', as: 'themes'
+  get 'theme/:id', to: 'themes#show', as: 'theme'
   get 'publications', to: 'publications#index', as: 'publications'
   get 'signin', to: 'sessions#new'
 

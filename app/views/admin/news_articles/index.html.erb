@@ -7,7 +7,7 @@
   <h1>News Articles</h1>
 </header>
 <%= button_to "Add News Article", new_admin_news_article_path, method: "get" %>
-<table>
+<table class="tables">
   <tbody>
     <% @news_articles.each do |article| %>
       <tr>

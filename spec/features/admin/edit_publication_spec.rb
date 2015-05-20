@@ -9,12 +9,16 @@ describe 'editing a publication' do
     publication = Publication.create!(title: 'publication title')
     piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     geert = Member.create!(name: "Geert Jacobs", email: "geert.jacobs@ugent.be")
+    Theme.create!(title: "theme 1", description: "description 1")
+    Theme.create!(title: "theme 2", description: "description 2")
+
     publication.members << piet 
     publication.members << geert 
 
     visit admin_publications_path
     click_link 'Edit'
 
+    check "theme 2"
     fill_in "Title", with: "title edited"
     fill_in "Description", with: "book review"
     uncheck "Piet Bracke"
@@ -25,6 +29,7 @@ describe 'editing a publication' do
     expect(page).to have_text 'Publication successfully updated'
     expect((Publication.last).description).to eq "book review"
     expect((Publication.last).members.count).to eq 1
+    expect((Publication.last).themes.count).to eq 1
   end
 
   it 'does not update a publication with invalid  data' do

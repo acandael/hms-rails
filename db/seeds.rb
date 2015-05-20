@@ -60,3 +60,22 @@ Member.create!([
 Geert Jacobs received a PhD in Linguistics in 1997 from the University of Antwerp, where he wrote a dissertation on the metapragmatics of press releases.}.squish
   }
 ])
+
+Theme.create!([
+  {
+    title: 'Stakeholder analysis',
+    description: 'This research line aims to chart the organizations that are active in the broad field of health issues in Flanders'
+  },
+  {
+    title: 'News story lifecycle analysis',
+    description: 'The second line of research focuses on the (production) lifecycle of news stories on health issues as they travel back and forth among the stakeholders'
+  },
+  {
+    title: 'News sourcing, frame and discourse analysis',
+    description: 'This research line focuses on the final news content by monitoring how a wide range of Flemish news media cover health-related information.'
+  },
+  {
+    title: 'Audience Research',
+    description: 'The audience-oriented research line is to be situated at the receiver’s end of the health discourse chain.'
+  }
+])

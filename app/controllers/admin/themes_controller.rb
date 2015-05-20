@@ -42,6 +42,6 @@ class Admin::ThemesController < ApplicationController
   private
 
   def theme_params
-    params.required(:theme).permit(:title, :description)
+    params.required(:theme).permit(:title, :description, :member_ids => [], :publication_ids => [])
   end
 end

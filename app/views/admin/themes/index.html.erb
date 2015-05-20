@@ -7,11 +7,11 @@
     <h1>Themes</h1>
   </header>
   <%= button_to "Add Theme", new_admin_theme_path, method: "get" %>
-  <table>
+  <table class="tables">
     <tbody>
   <% @themes.each do |theme| %>
     <tr>
-    <td><%= theme.title %></td>
+    <td><%= link_to theme.title, admin_theme_path(theme) %></td>
     <td><%= link_to "Edit", edit_admin_theme_path(theme) %> | <%= link_to "Delete", admin_theme_path(theme), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>

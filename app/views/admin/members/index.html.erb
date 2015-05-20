@@ -7,7 +7,7 @@
     <h1>Members</h1>
   </header>
   <%= button_to "Add Member", new_admin_member_path, method: "get" %>
-  <table>
+  <table class="tables">
     <tbody>
       <% @members.each do |member| %>
         <tr>
