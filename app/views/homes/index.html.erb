@@ -22,47 +22,21 @@
     </div>
     <p class="all"><%= link_to "read all news", news_articles_path %></p>
   </div>
+  <% @themes.in_groups_of(2, false) do |themes| %>
   <div class="bullets">
-    <div class="bullet two-col-bullet">
-      <div class="bullet-icon bullet-icon-1">
-        <%= image_tag "logo-small-28x42.png" %>
-      </div>
-      <div class="bullet-content">
-        <h2><a href="/stakeholder-analysis.html">Stakeholder analysis</a></h2>
-        <p>This research line aims to chart the organizations that are active in the broad field of health issues in Flanders.</p>
-        <p>Secondly, it explores the discourses on health problems as articulated by these various interest groups.</p>
+    <% themes.each do |theme| %>
+      <div class="bullet two-col-bullet">
+        <div class="bullet-icon bullet-icon-1">
+          <%= image_tag "logo-small-28x42.png" %>
         </div>
-    </div>  
-    <div class="bullet two-col-bullet">
-      <div class="bullet-icon bullet-icon-2">
-        <%= image_tag "logo-small-28x42.png" %>
-      </div>
-      <div class="bullet-content">
-        <h2><a href="/news-story-lifecycle-analysis.html">News story lifecycle analysis</a></h2>
-        <p>The second line of research focuses on the (production) lifecycle of news stories on health issues as they travel back and forth among the stakeholders</p>
-      </div>
-    </div>
-  </div>
-  <div class="bullets">
-    <div class="bullet two-col-bullet">
-      <div class="bullet-icon bullet-icon-1">
-        <%= image_tag "logo-small-28x42.png" %>
-      </div>
-      <div class="bullet-content">
-        <h2><a href="/news-sourcing-frame-discourse-analysis.html">News sourcing, frame and discourse analysis</a></h2>
-        <p>This research line focuses on the final news content by monitoring how a wide range of Flemish news media cover health-related information.</p>
+        <div class="bullet-content">
+          <h2><%= link_to theme.title, theme_path(theme) %></h2>
+          <p><%= theme.description %></p>
         </div>
-    </div>  
-    <div class="bullet two-col-bullet">
-      <div class="bullet-icon bullet-icon-2">
-        <%= image_tag "logo-small-28x42.png" %>
       </div>
-      <div class="bullet-content">
-        <h2><a href="/audience-research.html">Audience Research</a></h2>
-        <p>The audience-oriented research line is to be situated at the receiver’s end of the health discourse chain.</p>
-      </div>
-    </div>
+    <% end %>
   </div>
+  <% end %>
 </section>
 
 <script>
