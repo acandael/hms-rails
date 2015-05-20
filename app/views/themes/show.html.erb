@@ -1,12 +1,23 @@
-<article>
-<header>
-  <h1><%= @theme.title %></h1>
-</header>
-<p><%= @theme.description %></p>
-<p>Menbers:</p>
-<ul>
-  <% @theme.members.each do |member| %>
-    <li><%= member.name %></li>
-  <% end %>
-</ul>
-<article>
+<article class="research-theme">
+  <div class="breadcrumb">
+    <a href="/research.html">Research</a>
+    <a href="javascript:void(0)"><%= @theme.title %></a>
+  </div>
+  <header>
+    <h1><%= @theme.title %></h1>
+  </header>
+  <div class="content">
+    <p><%= @theme.description %></p>
+    <% if @theme.members.any? %>
+      <h2>Researchers</h2>
+      <ul>
+        <% @theme.members.each do |member| %>
+          <li><%= link_to member.name, member_path(member) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <aside>
+    <%= image_tag "logo-hse-250x250.png" %>
+  </aside>
+</article>

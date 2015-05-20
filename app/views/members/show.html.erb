@@ -11,10 +11,14 @@
     </aside>
     <div class="content">
       <p><%= @member.bio %></p>
-      <h2>Research</h2>
-      <ul>
-        <li><a href="/stakeholder-analysis.html">Stakeholder analysis</a></li>
-      </ul>
+      <% if @member.themes.any? %>
+        <h2>Research</h2>
+        <ul>
+          <% @member.themes.each do |theme| %>
+            <li><%= link_to theme.title, theme_path(theme) %>
+          <% end %>
+        </ul>
+      <% end %>
       <% if @member.publications.any? %>
         <h2>Publications</h2>
         <ul>

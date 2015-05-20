@@ -15,5 +15,9 @@ describe 'viewing a theme' do
     expect(page).to have_text theme.description
     expect(page).to have_text piet.name
     expect(page).to have_text sarah.name
+
+    click_link piet.name
+    
+    expect(current_path).to eq(member_path(piet.id))
   end
 end

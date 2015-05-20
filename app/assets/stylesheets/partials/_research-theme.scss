@@ -1,0 +1,51 @@
+article.research-theme {
+    h1 {
+     text-align: left;
+     font-size: $base-font-size * 1.3;
+     @include media($medium-screen) {
+        font-size: $base-font-size * 2.25;
+      }
+    }
+
+    h2 {
+      margin-top: em(20);
+      margin-bottom: em(10);
+      font-size: $base-font-size * 1.2;
+      @include media($medium-screen) {
+        font-size: $base-font-size * 2;
+        text-align: left;
+      }
+    }
+
+    li {
+     line-height: $base-line-height * .5;
+    }
+
+    .content {
+      @include media($medium-screen) {
+        @include span-columns(8 of 12);
+        padding-right: em(40);
+        margin-left: 0;
+      }
+    }
+
+    ul {
+      margin-top: em(10);
+    }
+    li {
+      margin-bottom: 1em;
+      line-height: .5em;
+    }
+
+    aside {
+      display: none;
+      @include media($medium-screen) {
+        @include span-columns(4 of 12);
+        @include omega();
+
+        img {
+          float: right;
+        }
+      }
+    }
+  }
