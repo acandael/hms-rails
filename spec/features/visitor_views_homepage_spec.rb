@@ -30,4 +30,16 @@ describe "viewing the homepage" do
     expect(page).to have_text theme2.title
     expect(page).to have_text theme2.description
   end
+
+  it 'shows the news article when clicked' do
+    click_link article2.title
+
+    expect(current_path).to eq news_article_path(article2.id)
+  end
+
+  it 'shows the theme when clicked' do
+    click_link theme1.title
+
+    expect(current_path).to eq theme_path(theme1.id)
+  end
 end

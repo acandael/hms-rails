@@ -16,6 +16,12 @@
         <% end %>
       </ul>
     <% end %>
+    <% if @theme.publications.any? %>
+      <h2>Publications</h2>
+        <% @theme.publications.each do |publication| %>
+          <p><%= publication.title %></p>
+        <% end %>
+    <% end %>
   </div>
   <aside>
     <%= image_tag "logo-hse-250x250.png" %>
