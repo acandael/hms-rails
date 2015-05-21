@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'theme/:id', to: 'themes#show', as: 'theme'
   get 'publications', to: 'publications#index', as: 'publications'
   get 'contact', to: 'pages#contact'
+  get 'nederlands', to: 'pages#nederlands'
   get 'signin', to: 'sessions#new'
 
   resource :session
