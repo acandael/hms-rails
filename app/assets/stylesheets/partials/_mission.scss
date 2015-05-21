@@ -1,0 +1,27 @@
+article.mission {
+  
+  h1 {
+    @include media($medium-screen) {
+      text-align: left;
+    }
+  }
+  h2 {
+    @include media($medium-screen) {
+      margin-bottom: em(10);
+    }
+  }
+
+  @include media($medium-screen) {
+    .content {
+      @include span-columns(8 of 12);
+      padding-right: em(40);
+      float: left;
+    }
+    aside {
+      float: right;
+      margin-left: 0;
+      @include span-columns(4 of 12);
+    }
+  }
+
+}
