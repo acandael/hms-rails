@@ -1,0 +1,52 @@
+<section class="contact">
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <div class="information">
+    <h2>Contact Information</h2>
+    <p>Office: Voldersstraat 9, 9000 Ghent (Belgium)<br />
+    Postal address: Korte Meer 11, 9000 Ghent (Belgium)</p>
+    <p>
+    <i class="fa fa-phone-square left"></i><a href="tel:003292649758">+32 (0)9 264 97 58</a><br />
+    <i class="fa fa-envelope left"></i><a href="mailto:sarah.vanleuven@ugent.be">sarah.vanleuven@ugent.be</a></p>
+  </div>
+  <div class="where">
+    <ul class="accordion-tabs-minimal">
+      <li class="tab-header-and-content">
+        <a href="#" class="tab-link is-active">By Car</a>
+        <div class="tab-content">
+          <p>If you come from Antwerp or Kortrijk via the E17, follow the direction "Gent", and then the direction "Gent Centrum" (B401). Via the B401 you arrive at the Zuidpark. There you just keep following the P-route to the parking place Korte Meer (see the map underneath)</p>
+          <p>If you come from Ostend or Brussels via the E40, follow the direction "Gent Antwerpen" (E17), follow the direction "Gent", and then the direction "Gent Centrum" (B401). Via the B401 you arrive at the Zuidpark. There you just keep following the P-route to the parking place Korte Meer.</p>
+        </div>
+      </li>
+      <li class="tab-header-and-content">
+        <a href="#" class="tab-link">By Public Transport</a>
+        <div class="tab-content">
+        <p>Take the train to (Sint-Pietersstation Gent) and then take tram 1 heading to the center and get off at stop ‘Korte Meer’ which is the shopping street area.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.075007295212!2d3.72307279999999!3d51.05170280000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371442ffe9533%3A0xe47f57e176bed6ef!2sKorte+Meer+5!5e0!3m2!1snl!2sbe!4v1403267695660" style="border:0"></iframe>
+  <div>
+</section>
+<script>
+$(document).ready(function () {
+  $('.accordion-tabs-minimal').each(function(index) {
+    $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
+  });
+  $('.accordion-tabs-minimal').on('click', 'li > a', function(event) {
+    if (!$(this).hasClass('is-active')) {
+      event.preventDefault();
+      var accordionTabs = $(this).closest('.accordion-tabs-minimal')
+      accordionTabs.find('.is-open').removeClass('is-open').hide();
+      $(this).next().toggleClass('is-open').toggle();
+      accordionTabs.find('.is-active').removeClass('is-active');
+      $(this).addClass('is-active');
+    } else {
+      event.preventDefault();
+    }
+  });
+  });
+</script>
