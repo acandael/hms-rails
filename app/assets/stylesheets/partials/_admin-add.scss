@@ -1,5 +1,5 @@
 section.admin-add {
-  @include outer-container;
+  padding-top: em(40);
   .breadcrumb {
     @include shift(1);
   }

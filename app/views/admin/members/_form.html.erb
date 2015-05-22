@@ -1,8 +1,4 @@
 <%= form_for [:admin, @member], :html => { class: "admin-add" } do |f| %>
-  <div class="breadcrumb">
-    <%= link_to "Dashboard", admin_path %>
-    <%= link_to "All Members", admin_members_path %>
-  </div>
   <header>
     <h1><i class="fa fa-user"></i>
       <% if @member.new_record? %>

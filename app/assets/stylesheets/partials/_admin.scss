@@ -1,10 +1,12 @@
 section.admin {
-  @include outer-container;
+  min-height: 600px;
+  padding-top: em(40);
   nav.admin {
     @include span-columns(8);
     @include shift(2);
     margin-top: em(40);
     padding: 3em;
+    background-color: white;
 
     border: 1px solid lighten($dark-gray, 30);
     border-radius: 5px;

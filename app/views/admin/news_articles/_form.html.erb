@@ -1,8 +1,4 @@
 <%= form_for [:admin, @news_article], :html => { class: "admin-add" } do |f| %>
-  <div class="breadcrumb">
-    <%= link_to "Dashboard", admin_path %>
-    <%= link_to "All News Articles", admin_news_articles_path %>
-  </div>
   <header>
     <h1><i class="fa fa-newspaper-o"></i>
       <% if @news_article.new_record? %>

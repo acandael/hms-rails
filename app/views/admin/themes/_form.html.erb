@@ -1,8 +1,4 @@
 <%= form_for [:admin, @theme], :html => { class: "admin-add" } do |f| %>
-  <div class="breadcrumb">
-    <%= link_to "Dashboard", admin_path %>
-    <%= link_to "All Themes", admin_themes_path %>
-  </div>
   <header>
     <h1>
     <% if @theme.new_record? %>

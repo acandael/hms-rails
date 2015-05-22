@@ -1,8 +1,4 @@
 <%= form_for [:admin, @publication], :html => { class: "admin-add" } do |f| %>
-  <div class="breadcrumb">
-    <%= link_to "Dashboard", admin_path %>
-    <%= link_to "All Publications", admin_publications_path %>
-  </div>
   <header>
     <h1><i class="fa fa-file-text-o"></i>
       <% if @publication.new_record? %>

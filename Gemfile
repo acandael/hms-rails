@@ -36,6 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bourbon', '~> 4.2.2'
 gem 'neat', '~> 1.7.2'
 
+gem 'normalize-rails'
+
 # Font Awesome
 gem 'font-awesome-rails', '~> 4.3.0.0'
 

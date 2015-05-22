@@ -32,12 +32,19 @@ section {
 
 // Titles
 h1 {
-  color: darken($green, 10);
-}
+    font-size: $base-font-size * 2.25; // 16 * 2.25 = 36px
+    color: darken($green, 10);
+  }
 
-h2 {
-  color: darken($green, 5);
-}
+  h2 {
+      font-size: $base-font-size * 2; // 16 * 2 = 32px
+      color: darken($green, 5);
+    }
+
+    h3 {
+        font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
+      }
+
 
 
 .push {
@@ -69,7 +76,7 @@ i {
 }
 
 
-.breadcrumb { 
+.breadcrumb {
   $breadcrumb-border-color: $base-border-color;
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
   $breadcrumb-height: em(40);
