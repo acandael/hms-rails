@@ -13,6 +13,14 @@ html, body {
   height: 100%;
 }
 
+.push {
+  height: 5em;
+  @include media($large-screen) {
+   height: 4em;
+   padding: 4em;
+  }
+}
+
 section {
   @include outer-container;
   padding-left: em(10);
@@ -47,13 +55,6 @@ h1 {
 
 
 
-.push {
-  height: 5em;
-  @include media($large-screen) {
-   height: 4em;
-   padding: 4em;
-  }
-}
 
 .texture {
   height: 5em;
