@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'publications', to: 'publications#index', as: 'publications'
   get 'contact', to: 'pages#contact'
   get 'nederlands', to: 'pages#nederlands'
+  get 'disclaimer', to: 'pages#disclaimer'
   get 'signin', to: 'sessions#new'
 
   resource :session
