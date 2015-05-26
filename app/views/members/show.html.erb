@@ -1,3 +1,5 @@
+<% content_for(:title, @member.name) %>
+<% content_for(:description, truncate(@member.bio, length: 160)) %>
 <article class="researcher">
     <div class="breadcrumb">
       <a href="/people.html">People</a>
