@@ -1,4 +1,4 @@
-class Admin::ThemesController < ApplicationController
+class Admin::ThemesController < DashboardController
   def index
     @themes = Theme.all
   end
