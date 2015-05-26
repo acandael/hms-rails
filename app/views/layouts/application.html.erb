@@ -16,12 +16,12 @@
   <body class="texture">
     <div id="wrapper">
       <% if flash[:notice] %>
-        <p class="flash notice">
+        <p class="flash-notice">
           <%= flash[:notice] %>
         </p>
       <% end %>
       <% if flash[:alert] %>
-        <p class="flash alert">
+        <p class="flash-alert">
           <%= flash[:alert] %>
         </p>
       <% end %>
@@ -32,5 +32,14 @@
       <div class="push"></div>
     </div>
     <%= render 'layouts/footer' %>
+    <script>
+      $(document).ready(function() {
+        setTimeout(function(){
+          $(".flash-alert, .flash-notice").fadeOut("slow", function() {
+            $(this).remove();
+          });
+        }, 4500);
+      });
+    </script>
   </body>
 </html>
