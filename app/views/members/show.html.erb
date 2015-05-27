@@ -23,11 +23,9 @@
       <% end %>
       <% if @member.publications.any? %>
         <h2>Publications</h2>
-        <ul>
         <% @member.publications.each do |publication| %>
-          <li><i class="fa fa-download left"></i><%= link_to publication.document_filename, attachment_url(publication, :document) %></li>
+          <p><%= publication.title %> ( <i class="fa fa-download left"></i><%= link_to "download", attachment_url(publication, :document) %> )</p>
         <% end %>
-        </ul>
       <% end %>
       <h2>Contact</h2>
       <p>

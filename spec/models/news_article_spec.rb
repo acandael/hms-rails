@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe NewsArticle do
   it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:body) }
    
   it "accepts properly formatted links" do
     links = %w[http://www.somewebsite.com http://somewebsite.com]

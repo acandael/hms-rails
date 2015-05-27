@@ -15,4 +15,13 @@ describe 'viewing the members' do
     expect(page).to have_text member3.name
     expect(page).to have_text member3.title
   end
+
+  it 'shows the member details when clicked' do
+    member = Member.create!(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be", title: "Postdoctoral Researcher")
+
+    visit people_path
+    click_link member.name
+
+    expect(current_path).to eq member_path(member.id)
+  end
 end

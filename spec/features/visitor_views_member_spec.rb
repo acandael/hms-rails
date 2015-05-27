@@ -1,22 +1,31 @@
 require 'rails_helper'
 
 describe 'viewing a member' do
-  it 'shows the member details' do
-    member = Member.create!(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be", phone: "32 (0)9 264 97 58", title: "Postdoctoral Researcher", address: "Voldersstraat 9, 9000 Ghent Belgium", bio: "Sarah Van Leuven is the postdoctoral research coordinator of Health, Media & Society. She is also a member of the Center for Journalism Studies")
-
-    theme = Theme.create!(title: "theme 1", description: "description for theme 1")
+  let(:member) { Member.create!(member_attributes) }
+  let(:theme) { Theme.create!(theme_attributes) }
+  let(:publication) { Publication.create!(publication_attributes) }
+  before do
     member.themes << theme
-
+    member.publications << publication
     visit member_path(member)
+  end
 
+  it 'shows the member details' do
     expect(page).to have_text member.name
     expect(page).to have_text member.email
     expect(page).to have_text member.phone
     expect(page).to have_text member.address
     expect(page).to have_text member.bio
 
+  end
+
+  it 'goes to the theme when clicked' do
     click_link theme.title
     
     expect(current_path).to eq theme_path(theme.id)
+  end
+
+  it 'shows the member publications' do
+    expect(page).to have_text publication.title
   end
 end

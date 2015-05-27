@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Member do
   it { should have_many(:publications) }
   it { should have_many(:themes) }
+  it { should validate_presence_of(:email) }
 
    
   it "accepts properly formatted email addresses" do
