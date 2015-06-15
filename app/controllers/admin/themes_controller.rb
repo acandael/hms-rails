@@ -1,10 +1,10 @@
 class Admin::ThemesController < DashboardController
+  before_action :find_theme, only: [:show, :edit, :update, :destroy]
   def index
     @themes = Theme.all
   end
 
   def show
-    @theme = Theme.find(params[:id])
   end
 
   def new
@@ -21,11 +21,9 @@ class Admin::ThemesController < DashboardController
   end
 
   def edit
-    @theme = Theme.find(params[:id])
   end
 
   def update
-    @theme = Theme.find(params[:id])
     if @theme.update(theme_params)
       redirect_to admin_themes_path, notice: "Theme successfully updated"
     else
@@ -34,14 +32,17 @@ class Admin::ThemesController < DashboardController
   end
 
   def destroy
-    @theme = Theme.find(params[:id])
     @theme.delete
     redirect_to admin_themes_path, notice: "Theme successfully deleted"
   end
 
   private
 
+  def find_theme
+    @theme = Theme.friendly.find(params[:id])
+  end
+
   def theme_params
-    params.required(:theme).permit(:title, :description, :member_ids => [], :publication_ids => [])
+    params.required(:theme).permit(:title, :slug, :description, :member_ids => [], :publication_ids => [])
   end
 end

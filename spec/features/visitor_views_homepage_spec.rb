@@ -43,6 +43,6 @@ describe "viewing the homepage" do
   it 'shows the theme when clicked' do
     click_link theme1.title
 
-    expect(current_path).to eq theme_path(theme1.id)
+    expect(current_path).to eq theme_path(theme1.friendly_id)
   end
 end

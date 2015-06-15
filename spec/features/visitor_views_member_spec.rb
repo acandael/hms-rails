@@ -22,7 +22,7 @@ describe 'viewing a member' do
   it 'goes to the theme when clicked' do
     click_link theme.title
     
-    expect(current_path).to eq theme_path(theme.id)
+    expect(current_path).to eq theme_path(theme.friendly_id)
   end
 
   it 'shows the member publications' do

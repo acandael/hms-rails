@@ -41,6 +41,9 @@ gem 'normalize-rails'
 # Font Awesome
 gem 'font-awesome-rails', '~> 4.3.0.0'
 
+#seo friendly urls
+gem 'friendly_id', '~> 5.1.0'
+
 # file uploading
 gem "mini_magick"
 gem 'refile', '~> 0.5.4', require: ["refile/rails", "refile/image_processing"]
@@ -54,7 +57,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 1.3.6'
 
   gem 'rspec-rails', '~> 3.2.1'
 end

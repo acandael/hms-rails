@@ -40,6 +40,6 @@ describe 'viewing publications page' do
     visit publications_path
     click_link theme.title
 
-    expect(current_path).to eq theme_path(theme.id)
+    expect(current_path).to eq theme_path(theme.friendly_id)
   end
 end

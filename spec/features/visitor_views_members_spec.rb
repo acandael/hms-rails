@@ -22,6 +22,6 @@ describe 'viewing the members' do
     visit people_path
     click_link member.name
 
-    expect(current_path).to eq member_path(member.id)
+    expect(current_path).to eq member_path(member.friendly_id)
   end
 end

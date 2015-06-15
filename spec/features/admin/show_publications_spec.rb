@@ -28,6 +28,6 @@ describe 'Showing a publication' do
     expect(page).to have_text "theme 1"
 
     click_link "theme 1"
-    expect(current_path).to eq admin_theme_path(theme.id)
+    expect(current_path).to eq admin_theme_path(theme.friendly_id)
   end
 end

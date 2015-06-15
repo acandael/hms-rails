@@ -27,7 +27,7 @@ describe 'viewing the themes' do
     visit themes_path
     click_link theme.title
 
-    expect(current_path).to eq theme_path(theme.id)
+    expect(current_path).to eq theme_path(theme.friendly_id)
   end
 
   it 'goes to the member page when a member name is clicked' do

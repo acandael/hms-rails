@@ -1,10 +1,10 @@
 class Admin::MembersController < DashboardController
+  before_action :find_member, only: [:show, :edit, :update, :destroy]
   def index
     @members = Member.all
   end 
 
   def show
-    @member = Member.find(params[:id])
   end
 
   def new
@@ -22,11 +22,9 @@ class Admin::MembersController < DashboardController
   end
 
   def edit
-    @member = Member.find(params[:id])
   end
 
   def update
-    @member = Member.find(params[:id])
     if @member.update(member_params)
       redirect_to admin_members_path, notice: "Member was successfully updated"
       else
@@ -35,14 +33,16 @@ class Admin::MembersController < DashboardController
   end
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
     redirect_to admin_members_path, notice: "Member successfully deleted"
   end
 
   private
-
+  
+  def find_member
+    @member = Member.friendly.find(params[:id])
+  end
   def member_params
-    params.required(:member).permit(:name, :title, :email, :phone, :address, :bio, :image, :image_cache_id, :remove_image)
+    params.required(:member).permit(:name, :slug, :title, :email, :phone, :address, :bio, :image, :image_cache_id, :remove_image)
   end
 end
