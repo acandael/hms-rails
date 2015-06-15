@@ -1,5 +1,5 @@
 class Admin::NewsArticlesController < DashboardController
-  before_action :set_news_article, only: [:show, :edit, :update, :destroy]
+  before_action :find_news_article, only: [:show, :edit, :update, :destroy]
   def index
     @news_articles = NewsArticle.all
   end
@@ -22,7 +22,6 @@ class Admin::NewsArticlesController < DashboardController
   end
 
   def edit
-    @news_article = NewsArticle.find(params[:id])
   end
 
   def update
@@ -40,11 +39,11 @@ class Admin::NewsArticlesController < DashboardController
 
   private
   
-  def set_news_article
-    @news_article = NewsArticle.find(params[:id])
+  def find_news_article
+    @news_article = NewsArticle.friendly.find(params[:id])
   end
 
   def news_article_params
-    params.required(:news_article).permit(:title, :body, :image, :image_cache_id, :remove_image, :document, :remove_document, :link)
+    params.required(:news_article).permit(:title, :slug, :body, :image, :image_cache_id, :remove_image, :document, :remove_document, :link)
   end
 end

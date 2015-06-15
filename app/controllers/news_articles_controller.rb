@@ -4,6 +4,6 @@ class NewsArticlesController < ApplicationController
   end
 
   def show
-    @article = NewsArticle.find(params[:id])
+    @article = NewsArticle.friendly.find(params[:id])
   end  
 end

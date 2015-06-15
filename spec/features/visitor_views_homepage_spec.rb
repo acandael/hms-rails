@@ -30,7 +30,7 @@ describe "viewing the homepage" do
   it 'shows the news article when clicked' do
     click_link article2.title
 
-    expect(current_path).to eq news_article_path(article2.id)
+    expect(current_path).to eq news_article_path(article2.friendly_id)
   end
 
   it 'shows the themes' do
