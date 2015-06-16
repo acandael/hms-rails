@@ -16,8 +16,12 @@
     <div class="news-inner">
       <h2>News</h2>
       <% @articles.each do |article| %>
-        <p><%= link_to article.title, news_article_path(article) %><br />
-        posted on <time datetime="<%= article.created_at %>"><%= article.created_at.strftime('%d %B %Y') %></time></p>
+        <p>
+        <%= link_to article.title, news_article_path(article) %><br />
+        <% if article.date.present? %>
+          <time datetime="<%= article.date %>"><%= article.date.strftime('%d %B %Y') %></time>
+        <% end %>
+        </p>
         <p><%= truncate(article.body, length:90, separator: ' ') %></p>
       <% end %>
     </div>

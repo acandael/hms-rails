@@ -10,7 +10,7 @@
   </header>
   <footer>
     <% if @article.date.present? %>
-      <p>Posted on <time datetime="<%= @article.created_at %>"><%= @article.date.strftime('%d %B %Y') %></time></p>
+      <p><time datetime="<%= @article.date %>"><%= @article.date.strftime('%d %B %Y') %></time></p>
     <% end %>
   </footer>
   <div class="content">
