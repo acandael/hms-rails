@@ -1,7 +1,7 @@
 class Admin::MembersController < DashboardController
   before_action :find_member, only: [:show, :edit, :update, :destroy]
   def index
-    @members = Member.all
+    @members = Member.all.order(name: :desc)
   end 
 
   def show
