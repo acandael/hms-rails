@@ -8,7 +8,7 @@
     <h2><%= link_to article.title, news_article_path(article) %></h2>
     <p><%= truncate(article.body, length: 90, separator: ' ') %></p>
     <footer>
-      <p>Posted on <time datetime="<%= article.created_at %>"><%= article.created_at.strftime('%d %B %Y') %></time></p>
+      <p><time datetime="<%= article.date %>"><%= article.date.strftime('%d %B %Y') %></time></p>
     </footer>
   </article>
   <% end %>

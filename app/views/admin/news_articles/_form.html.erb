@@ -10,6 +10,10 @@
   </header>
   <%= render "shared/errors", object: @news_article %>
   <div>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+  <div>
     <%= f.label :title, autofocus: true %>
     <%= f.text_field :title %>
   </div>

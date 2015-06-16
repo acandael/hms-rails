@@ -16,6 +16,7 @@ describe 'viewing a member' do
     expect(page).to have_text member.phone
     expect(page).to have_text member.address
     expect(page).to have_text member.bio
+    expect(page).to have_text member.bibliography
 
   end
 

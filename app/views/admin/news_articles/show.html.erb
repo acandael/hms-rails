@@ -6,9 +6,12 @@
   </div>
   <article class="news-article">
     <header>
-      <h1><%= @news_article.title %></h1
-      <p class="date"><%= @news_article.created_at.strftime('%d %B %Y') %></p>
+      <h1><%= @news_article.title %></h1>
     </header>
+    <div class="property">
+      <p><strong>Date:</strong></p>
+      <p><%= @news_article.date.strftime('%d %B %Y') %></p>
+    </div>
     <div class="property">
       <p><strong>Title:</strong></p>
       <p><%= @news_article.title %></p>

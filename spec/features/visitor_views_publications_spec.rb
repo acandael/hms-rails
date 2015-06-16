@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'viewing publications page' do
   it 'shows a list of publications' do
-    publication1 = Publication.create!(title: "publication 1", description: "book review")
-    publication2 = Publication.create!(title: "publication 2", description: "conference presentation")
+    publication1 = Publication.create!(date: "12 june 2015".to_date, title: "publication 1", description: "book review")
+    publication2 = Publication.create!(date: "13 june 2015".to_date, title: "publication 2", description: "conference presentation")
     author = Member.create!(member_attributes)
     publication1.members << author
 
@@ -14,7 +14,7 @@ describe 'viewing publications page' do
 
     expect(page).to have_css 'h1', text:  publication1.title
     expect(page).to have_text publication1.description
-    expect(page).to have_css 'p.date', publication1.created_at.strftime('%d %B %Y')
+    expect(page).to have_css 'p.date', publication1.date.strftime('%d %B %Y')
     expect(page).to have_css 'p.authors',  author.name
     expect(page).to have_css 'h1', publication2.title
     expect(page).to have_text publication2.description

@@ -14,8 +14,8 @@ describe "admin views newsarticle" do
     visit admin_news_articles_path
     click_link newsarticle.title
 
+    expect(page).to have_text newsarticle.date.strftime('%d %B %Y')
     expect(page).to have_text newsarticle.title
-    expect(page).to have_text newsarticle.created_at.strftime('%d %B %Y')
     expect(page).to have_text newsarticle.body
     expect(page).to have_selector("img[src$='#{newsarticle.image}']")
     expect(page).to have_text newsarticle.link

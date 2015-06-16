@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615130605) do
+ActiveRecord::Schema.define(version: 20150616081132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150615130605) do
     t.text   "bio"
     t.string "title"
     t.string "slug"
+    t.string "bibliography"
   end
 
   add_index "members", ["slug"], name: "index_members_on_slug", unique: true, using: :btree
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150615130605) do
     t.datetime "updated_at"
     t.string   "document_filename"
     t.string   "slug"
+    t.date     "date"
   end
 
   add_index "news_articles", ["slug"], name: "index_news_articles_on_slug", unique: true, using: :btree
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150615130605) do
     t.datetime "updated_at"
     t.string   "document_filename"
     t.string   "description"
+    t.date     "date"
   end
 
   create_table "theme_members", force: :cascade do |t|

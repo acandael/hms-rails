@@ -9,11 +9,11 @@ describe "viewing the news articles" do
 
     visit news_articles_path
     expect(page).to have_text article1.title
-    expect(page).to have_text "Posted on #{article1.created_at.strftime('%d %B %Y')}"
+    expect(page).to have_text "#{article1.date.strftime('%d %B %Y')}"
     expect(page).to have_text article2.title
-    expect(page).to have_text "Posted on #{article2.created_at.strftime('%d %B %Y')}"
+    expect(page).to have_text "#{article2.date.strftime('%d %B %Y')}"
     expect(page).to have_text article3.title
-    expect(page).to have_text "Posted on #{article3.created_at.strftime('%d %B %Y')}"
+    expect(page).to have_text "#{article3.date.strftime('%d %B %Y')}"
     
   end
   it "shows the news article details" do
@@ -26,6 +26,6 @@ describe "viewing the news articles" do
     expect(page).to have_text(article.body)
     expect(page).to have_selector("img[src$='#{article.image}']")
     expect(page).to have_text(article.link)
-    expect(page).to have_text(article.created_at.strftime('%d %B %Y'))
+    expect(page).to have_text(article.date.strftime('%d %B %Y'))
   end
 end

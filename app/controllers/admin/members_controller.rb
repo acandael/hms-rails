@@ -43,6 +43,6 @@ class Admin::MembersController < DashboardController
     @member = Member.friendly.find(params[:id])
   end
   def member_params
-    params.required(:member).permit(:name, :slug, :title, :email, :phone, :address, :bio, :image, :image_cache_id, :remove_image)
+    params.required(:member).permit(:name, :slug, :title, :email, :phone, :address, :bio, :bibliography, :image, :image_cache_id, :remove_image)
   end
 end

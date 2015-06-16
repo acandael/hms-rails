@@ -1,7 +1,7 @@
 class Admin::NewsArticlesController < DashboardController
   before_action :find_news_article, only: [:show, :edit, :update, :destroy]
   def index
-    @news_articles = NewsArticle.all
+    @news_articles = NewsArticle.all.order(:created_at)
   end
 
   def show
@@ -44,6 +44,6 @@ class Admin::NewsArticlesController < DashboardController
   end
 
   def news_article_params
-    params.required(:news_article).permit(:title, :slug, :body, :image, :image_cache_id, :remove_image, :document, :remove_document, :link)
+    params.required(:news_article).permit(:date, :title, :slug, :body, :image, :image_cache_id, :remove_image, :document, :remove_document, :link)
   end
 end

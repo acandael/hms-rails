@@ -1,6 +1,6 @@
 class Admin::PublicationsController < DashboardController
   def index
-    @publications = Publication.all
+    @publications = Publication.all.order(:created_at)
   end
 
   def show
@@ -42,6 +42,6 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:title, :description, :document, :remove_document, :theme_ids => [], :member_ids => [])
+    params.required(:publication).permit(:date, :title, :description, :document, :remove_document, :theme_ids => [], :member_ids => [])
   end
 end

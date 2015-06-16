@@ -14,6 +14,7 @@ describe 'creating a publication' do
    visit admin_publications_path
    click_button 'Add Publication'
 
+   fill_in "Date", with: "12 June 2015"
    fill_in "Title", with: "de perfecte storm"
    fill_in "Description", with: "book review"
    check piet.name
@@ -24,6 +25,7 @@ describe 'creating a publication' do
    expect(page).to have_text 'de perfecte storm' 
    expect((Publication.last).description).to eq 'book review'
    expect((Publication.last).members.count).to eq 2
+   expect((Publication.last).date).to eq "12 June 2015".to_date
   end
 
   it 'does not save a new publication with invalid data' do
