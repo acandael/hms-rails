@@ -14,7 +14,7 @@
     <% end %>
   </footer>
   <div class="content">
-    <p><%= @article.body %></p>
+    <p><%= simple_format(@article.body) %></p>
     <% if @article.document_id? %>
       <p><i class="fa fa-download left"></i><%= link_to @article.document_filename, attachment_url(@article, :document) %></p>
     <% end %>
