@@ -141,6 +141,8 @@ section.home {
     clear: both;
     @include clearfix;
     margin-top: em(40);
+    margin-left: 0;
+    margin-right: 0;
     //margin-bottom: $base-line-height;
 
     
