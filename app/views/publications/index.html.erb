@@ -8,7 +8,12 @@
     <article class="publication">
       <header>
         <h1><%= publication.title %></h1>
-        <p class="date"><%= publication.date.strftime('%d  %B %Y') %> | <%= publication.description %> | <% if publication.themes.any? %>
+        <p class="date">
+        <% if publication.date.present? %>
+          <%= publication.date.strftime('%d  %B %Y') %> |  
+          
+          <% end %> 
+          <%= publication.description %> | <% if publication.themes.any? %>
          <% publication.themes.each do |theme| %> 
            <%= link_to theme.title, theme_path(theme) %>
          <% end %>
