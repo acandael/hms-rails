@@ -9,7 +9,9 @@
     <h1><%= @article.title %>
   </header>
   <footer>
-    <p>Posted on <time datetime="<%= @article.created_at %>"><%= @article.date.strftime('%d %B %Y') %></time></p>
+    <% if @article.date.present? %>
+      <p>Posted on <time datetime="<%= @article.created_at %>"><%= @article.date.strftime('%d %B %Y') %></time></p>
+    <% end %>
   </footer>
   <div class="content">
     <p><%= @article.body %></p>
