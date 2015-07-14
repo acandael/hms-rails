@@ -37,6 +37,7 @@ gem 'bourbon', '~> 4.2.2'
 gem 'neat', '~> 1.7.2'
 
 gem 'normalize-rails'
+gem 'sitemap_generator', '~> 5.0.5'
 
 # Font Awesome
 gem 'font-awesome-rails', '~> 4.3.0.0'
