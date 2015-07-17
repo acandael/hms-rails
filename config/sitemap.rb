@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "http://www.healthmediasociety.net"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -24,4 +24,17 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
+
+  NewsArticle.find_each do |article|
+    add news_article_path(article), :priority => 0.7, :changefreq => 'weekly'
+  end
+
+  Member.find_each do |member|
+    add member_path(member), :priority => 0.7, :changefreq => 'monthly'
+  end
+
+  add news_path, :priority => 0.5, :changefreq => 'weekly'
+  add people_path, :priority => 0.5, :changefreq => 'monthly'
+  add publications_path, :priority => 0.5, :changefreq => 'monthly'
+  add themes_path, :priority => 0.5, :changefrea => 'yearly'
 end
