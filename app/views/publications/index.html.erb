@@ -16,6 +16,9 @@
           <%= publication.description %> | <% if publication.themes.any? %>
          <% publication.themes.each do |theme| %> 
            <%= link_to theme.title, theme_path(theme) %>
+            <% if theme != publication.themes.last %>
+              ,&nbsp;
+            <% end %>
          <% end %>
       <% end %>
         </p>
