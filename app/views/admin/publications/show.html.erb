@@ -8,10 +8,12 @@
     <header>
       <h1><%= @publication.title %></h1>
     </header>
-    <div class="property">
-      <p><strong>Date:</strong></p>
-      <p><%= @publication.date.strftime('%d %B %Y') %></p>
-    </div>
+    <% if @publication.date.present? %>
+      <div class="property">
+        <p><strong>Date:</strong></p>
+        <p><%= @publication.date.strftime('%d %B %Y') %></p>
+      </div>
+    <% end %>
     <div class="property">
       <p><strong>Title:</strong></p>
       <p><%= @publication.title %></p>
@@ -30,6 +32,12 @@
       <p><strong>Description:</strong></p>
       <p><%= @publication.description %></p>
     </div>
+    <% if @publication.summary.present? %>
+    <div class="property">
+      <p><strong>Summary:</strong></p>
+      <p><%= @publication.summary %></p>
+    </div>
+    <% end %>
     <% if @publication.members.any? %>
     <div class="property">
       <p><strong>Authors:</strong></p>

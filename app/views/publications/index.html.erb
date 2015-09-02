@@ -11,7 +11,7 @@
         <p class="date">
         <% if publication.date.present? %>
           <%= publication.date.strftime('%d  %B %Y') %> |  
-          
+
           <% end %> 
           <%= publication.description %> | <% if publication.themes.any? %>
          <% publication.themes.each do |theme| %> 
@@ -23,6 +23,11 @@
       <% end %>
         </p>
       </header>
+      <div class="content">
+        <% if publication.summary.present? %>
+          <p class="summary"><%= simple_format(publication.summary) %></p>
+        <% end %>
+      </div>
       <div class="content">
         <% if publication.members.any? %>
           <p class="authors">Authors:&nbsp;

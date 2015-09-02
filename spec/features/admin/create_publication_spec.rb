@@ -17,6 +17,7 @@ describe 'creating a publication' do
    fill_in "Date", with: "12 June 2015"
    fill_in "Title", with: "de perfecte storm"
    fill_in "Description", with: "book review"
+   fill_in "Summary", with: "this is a summary"
    check piet.name
    check geert.name
 
@@ -24,6 +25,7 @@ describe 'creating a publication' do
   
    expect(page).to have_text 'de perfecte storm' 
    expect((Publication.last).description).to eq 'book review'
+   expect((Publication.last).summary).to eq 'this is a summary'
    expect((Publication.last).members.count).to eq 2
    expect((Publication.last).date).to eq "12 June 2015".to_date
   end
