@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 # Use postgreSQl as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -61,6 +61,8 @@ group :development, :test do
   gem 'spring', '~> 1.3.6'
 
   gem 'rspec-rails', '~> 3.2.1'
+  gem 'bundler-audit'
+  gem 'brakeman', :require => false
 end
 
 group :test do
