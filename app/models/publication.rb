@@ -4,6 +4,6 @@ class Publication < ActiveRecord::Base
   has_many :theme_publications
   has_many :themes, :through => :theme_publications
   validates :title, presence: true
-  validates_length_of :summary, maximum: 200
+  validates_length_of :summary, maximum: 400
   attachment :document
 end
