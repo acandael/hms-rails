@@ -29,6 +29,11 @@
         <% end %>
       </div>
       <div class="content">
+        <% if publication.link.present? %>
+          <p><i class="fa fa-link left"></i><%= link_to publication.link %></p>
+        <% end %>
+      </div>
+      <div class="content">
         <% if publication.members.any? %>
           <p class="authors">Authors:&nbsp;
             <% publication.members.each do |member| %>
