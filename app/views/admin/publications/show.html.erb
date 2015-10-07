@@ -41,7 +41,7 @@
     <% if @publication.link.present? %>
     <div class="property">
       <p><strong>Link:</strong></p>
-      <p><%= link_to @publication.link %></p>
+      <p><%= link_to @publication.link, @publication.link %></p>
     </div>
     <% end %>
     <% if @publication.members.any? %>
