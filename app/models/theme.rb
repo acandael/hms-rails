@@ -7,4 +7,5 @@ class Theme < ActiveRecord::Base
   has_many :theme_members
   has_many :members, :through => :theme_members
   validates :title, presence: true
+  validates_length_of :summary, maximum: 300
 end

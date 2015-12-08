@@ -32,6 +32,7 @@ end
 def theme_attributes(overrides = {})
   {
     title: "Stakeholder analysis",
+    summary: "this is the summary",
     description: "this research line aims to chart the organizations that are active in the broad field of health issues in Flanders"
   }
 end

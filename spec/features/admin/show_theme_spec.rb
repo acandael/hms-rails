@@ -8,7 +8,7 @@ describe 'showing a theme' do
   end
 
   it 'shows the theme details' do
-    theme = Theme.create!(title: "Stakeholder analysis", description: "This research line aims to chart the organizations")
+    theme = Theme.create!(title: "Stakeholder analysis", summary: "This is the summary", description: "This research line aims to chart the organizations")
 
     piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     sarah = Member.create!(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be")
@@ -23,6 +23,7 @@ describe 'showing a theme' do
     visit admin_theme_path(theme)
 
     expect(page).to have_text 'Stakeholder analysis'
+    expect(page).to have_text 'This is the summary'
     expect(page).to have_text 'This research line aims to chart the organizations'
     expect(page).to have_text piet.name
     expect(page).to have_text sarah.name

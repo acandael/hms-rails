@@ -4,8 +4,8 @@ describe "viewing the homepage" do
   let!(:article1) { NewsArticle.create!(newsarticle_attributes(title: "article1")) }
   let!(:article2) { NewsArticle.create!(newsarticle_attributes(title: "article2")) }
   let!(:article3) { NewsArticle.create!(newsarticle_attributes(title: "article3")) }
-  let!(:theme1) { Theme.create!(title: "theme 1", description: "description for theme 1") }
-  let!(:theme2) { Theme.create!(title: "theme 2", description: "description for theme 2") } 
+  let!(:theme1) { Theme.create!(title: "theme 1", summary: "summary for theme 1") }
+  let!(:theme2) { Theme.create!(title: "theme 2", summary: "summary for theme 2") } 
   
   before do
     visit root_path
@@ -35,9 +35,9 @@ describe "viewing the homepage" do
 
   it 'shows the themes' do
     expect(page).to have_text theme1.title
-    expect(page).to have_text theme1.description
+    expect(page).to have_text theme1.summary
     expect(page).to have_text theme2.title
-    expect(page).to have_text theme2.description
+    expect(page).to have_text theme2.summary
   end
 
   it 'shows the theme when clicked' do

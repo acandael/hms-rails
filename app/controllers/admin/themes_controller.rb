@@ -43,6 +43,6 @@ class Admin::ThemesController < DashboardController
   end
 
   def theme_params
-    params.required(:theme).permit(:title, :slug, :description, :member_ids => [], :publication_ids => [])
+    params.required(:theme).permit(:title, :slug, :summary, :description, :member_ids => [], :publication_ids => [])
   end
 end
