@@ -18,6 +18,18 @@
     <%= f.text_area :summary, rows: "2" %>
   </div>
   <div>
+    <%= f.label :image %>
+    <div id="image"></div>
+    <% if @theme.image_id? %>
+      <%= image_tag attachment_url(@theme, :image, :fill, 150, 150) %>
+      <div class="check_box">
+        <%= f.check_box :remove_image %>
+        <%= f.label :remove_image %>
+      </div>
+    <% end %>
+    <%= f.attachment_field :image, direct: true, data: { remote_id: :member_image_cache_id } %>
+  </div>
+  <div>
     <%= f.label :description %>
     <%= f.text_area :description, rows: "5" %>
   </div>

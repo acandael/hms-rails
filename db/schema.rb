@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208123522) do
+ActiveRecord::Schema.define(version: 20151208135846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 20151208123522) do
     t.text   "description"
     t.string "slug"
     t.text   "summary"
+    t.string "image_id"
+    t.string "image_content_type"
   end
 
   add_index "themes", ["slug"], name: "index_themes_on_slug", unique: true, using: :btree

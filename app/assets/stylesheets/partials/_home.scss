@@ -151,62 +151,19 @@ section.home {
       padding: 1em;
       box-shadow: 0 1px 4px 1px $light-gray;
       margin-bottom: em(40);
+      margin-left: 2em;
+      margin-right: 2em;
+      text-align: center;
       @include media($medium-screen) {
         @include span-columns(6);
         @include omega(2n);  
         margin-bottom: 0;
       } 
     }
-    
-    
-  // change ".three-col-bullet" class to this for two bullet layout
-    .three-col-bullet {
-      @include media($large-screen) {
-        @include span-columns(4);
-        @include omega(3n);
-      }
-    }
 
-    
-  // change ".three-col-bullet" class to this for four bullet layout
-    .four-col-bullet {
-      @include media($large-screen) {
-        @include span-columns(3);
-        @include omega(4n);
-      }
-    }
-
-    .bullet-icon {
-      float: left;
-      background: $action-color;
-      padding: $icon-bullet-size /4;
-      padding-top: .5em;
-      border-radius: 50%;
-      width: $icon-bullet-size;
-      height: $icon-bullet-size;
-      display: none;
-      @include media($medium-screen) {
-        display: block;
-      }
-    }
-
-    .bullet-icon-1 {
-      background: $action-color;
-    }
-
-    .bullet-icon-2 {
-      background: adjust-hue($action-color, -50);
-    }
-
-    .bullet-icon-3 {
-      background: adjust-hue($action-color, -140);
-    }
-
-    .bullet-content {
-      margin-bottom: 2em;
-      @include media($medium-screen) {
-        margin-left: $icon-bullet-size *1.4;
-      }
+    img {
+      display: block;
+      margin: 0 auto;
     }
 
     h2 {
