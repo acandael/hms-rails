@@ -42,5 +42,5 @@ def publication_attributes(overrides = {})
     date: "12 June 2015".to_date,
     title: "Ouder worden in een veranderende samenleving",
     description: "book review"
-  }
+  }.merge(overrides)
 end

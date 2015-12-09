@@ -1,6 +1,11 @@
 class Admin::PublicationsController < DashboardController
   def index
-    @publications = Publication.all.order(:created_at)
+    if (category_selected?)
+      @publications = Publication.filter_by_category(params[:publication][:category])
+      @selected = params[:publication].try(:[], :category)
+    else
+      @publications = Publication.all.order("created_at asc")
+    end
   end
 
   def show
@@ -42,6 +47,10 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:date, :title, :description, :summary, :link, :document, :remove_document, :theme_ids => [], :member_ids => [])
+    params.required(:publication).permit(:date, :title, :category_id, :description, :summary, :link, :document, :remove_document, :theme_ids => [], :member_ids => [])
+  end
+
+  def category_selected?
+    params.has_key?(:publication) && (params[:publication][:category] != "")
   end
 end

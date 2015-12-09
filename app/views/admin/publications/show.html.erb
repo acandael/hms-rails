@@ -18,6 +18,10 @@
       <p><strong>Title:</strong></p>
       <p><%= @publication.title %></p>
     </div>
+    <div class="property">
+      <p><strong>Category:</strong></p>
+      <p><%= @publication.category.name %></p>
+    </div>
     <% if @publication.themes.any? %>
     <div class="property">
       <p><strong>Theme</strong></p>

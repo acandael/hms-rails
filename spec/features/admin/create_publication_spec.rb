@@ -9,6 +9,7 @@ describe 'creating a publication' do
   end
 
   it 'adds a publication to the publications list' do
+   category = Category.create!(name: "presentation")
    piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
    geert = Member.create!(name: "Geert Jacobs", email: "geert.jacobs@ugent.be")
    visit admin_publications_path
@@ -16,6 +17,7 @@ describe 'creating a publication' do
 
    fill_in "Date", with: "12 June 2015"
    fill_in "Title", with: "de perfecte storm"
+   select category.name, from: "Category"
    fill_in "Description", with: "book review"
    fill_in "Summary", with: "this is a summary"
    fill_in "Link", with: "http://www.ugent.be/ps"
@@ -25,6 +27,7 @@ describe 'creating a publication' do
    click_button "Create Publication"
   
    expect(page).to have_text 'de perfecte storm' 
+   expect((Publication.last).category.name).to eq 'presentation'
    expect((Publication.last).description).to eq 'book review'
    expect((Publication.last).summary).to eq 'this is a summary'
    expect((Publication.last).link).to eq 'http://www.ugent.be/ps'

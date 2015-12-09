@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208135846) do
+ActiveRecord::Schema.define(version: 20151209122320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -78,6 +82,7 @@ ActiveRecord::Schema.define(version: 20151208135846) do
     t.date     "date"
     t.text     "summary"
     t.string   "link"
+    t.integer  "category_id"
   end
 
   create_table "theme_members", force: :cascade do |t|

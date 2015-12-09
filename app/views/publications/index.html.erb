@@ -4,55 +4,10 @@
   <h1>Publications</h1>
   </header>
   <div class="theme">
-  <% @publications.each do |publication| %>
-    <article class="publication">
-      <header>
-        <h1><%= publication.title %></h1>
-        <p class="date">
-        <% if publication.date.present? %>
-          <%= publication.date.strftime('%d  %B %Y') %> |  
-
-          <% end %> 
-          <%= publication.description %> | <% if publication.themes.any? %>
-         <% publication.themes.each do |theme| %> 
-           <%= link_to theme.title, theme_path(theme) %>
-            <% if theme != publication.themes.last %>
-              ,&nbsp;
-            <% end %>
-         <% end %>
+    <% @publications.group_by { |p| p.category.name }.each do |category, publications| %>
+      <h2><%= category %></h2>
+      <% publications.each do |publication| %>
+        <%= link_to publication.title, publication_path(publication) %>
       <% end %>
-        </p>
-      </header>
-      <div class="content">
-        <% if publication.summary.present? %>
-          <p class="summary"><%= simple_format(publication.summary) %></p>
-        <% end %>
-      </div>
-      <div class="content">
-        <% if publication.link.present? %>
-          <p><i class="fa fa-link left"></i><%= link_to publication.link, publication.link %></p>
-        <% end %>
-      </div>
-      <div class="content">
-        <% if publication.members.any? %>
-          <p class="authors">Authors:&nbsp;
-            <% publication.members.each do |member| %>
-              <%= link_to member.name, member_path(member) %>
-              <% if member != publication.members.last %>
-                ,&nbsp;
-              <% end %>
-            <% end %>
-          </p>
-        <% end %>
-      </div>
-      <% if publication.document_id? %>
-      <div class="download">
-        <form action="<%= attachment_url(publication, :document) %>" method="get">
-          <button>Download</button>
-        </form>
-      </div>
-      <% end %>
-    </article>
-  <% end %>
-  </div>
+    <% end %>
 </section>

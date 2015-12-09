@@ -1,5 +1,9 @@
 class PublicationsController < ApplicationController
   def index
-    @publications = Publication.all.order(date: :desc)
+    @publications = Publication.order(category_id: :desc).order(date: :desc)
+  end
+
+  def show
+    @publication = Publication.find(params[:id])
   end
 end
