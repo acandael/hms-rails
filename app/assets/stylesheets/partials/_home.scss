@@ -12,7 +12,7 @@ section.home {
     background-size: cover;
 
 
-    margin-top: em(20);
+    margin-top: em(54);
     margin-bottom: em(60);
     //padding-bottom: 1em;
 
@@ -84,7 +84,7 @@ section.home {
 
   .news {
     position: relative;
-    margin-top: em(20);
+    margin-top: em(54);
     @include media($medium-screen) {
       @include span-columns(4);
       @include omega();
@@ -147,12 +147,8 @@ section.home {
 
     
     .two-col-bullet {
-      background: white;
       padding: 1em;
-      box-shadow: 0 1px 4px 1px $light-gray;
       margin-bottom: em(40);
-      margin-left: 2em;
-      margin-right: 2em;
       text-align: center;
       @include media($medium-screen) {
         @include span-columns(6);

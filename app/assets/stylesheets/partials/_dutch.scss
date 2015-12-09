@@ -29,7 +29,6 @@ article.dutch {
       background: white;
       padding: 1em;
       position: relative;
-      box-shadow: 0 1px 4px 1px $light-gray;
       @include media($medium-screen) {
         @include span-columns(6);
         @include omega(2n);
