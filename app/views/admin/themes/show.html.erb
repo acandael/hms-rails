@@ -17,6 +17,10 @@
       <p><%= @theme.summary %></p>
     </div>
     <div class="property">
+      <p><strong>Image</strong></p>
+      <%= image_tag attachment_url(@theme, :image, :fill, 400, 266) %>
+    </div>
+    <div class="property">
       <p><strong>Description:</strong></p>
       <p><%= @theme.description %></p>
     </div>

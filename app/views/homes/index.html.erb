@@ -31,7 +31,7 @@
   <div class="bullets">
     <% themes.each do |theme| %>
       <div class="bullet two-col-bullet">
-        <%= image_tag attachment_url(theme, :image, :fill, 250, 250) %>
+        <%= image_tag attachment_url(theme, :image, :fill, 400, 266) %>
           <h2><%= link_to theme.title, theme_path(theme) %></h2>
           <p><%= simple_format(theme.summary) %></p>
       </div>
