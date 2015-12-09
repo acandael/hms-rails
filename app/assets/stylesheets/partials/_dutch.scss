@@ -50,30 +50,10 @@ article.dutch {
 
       
 
-      .bullet-icon {
-        margin: auto;
-        @include media($medium-screen) {
-          float: left;
-        }
-        background: $action-color;
-        padding: $icon-bullet-size /4;
-        border-radius: 50%;
-        width: $icon-bullet-size;
-        height: $icon-bullet-size;
-      }
-
-      .bullet-icon-1 {
-        background: $action-color;
-      }
-
-      .bullet-icon-2 {
-        background: adjust-hue($action-color, -50);
-      }
       .bullet-content {
         margin-left: 0;
         margin-right: 0;
         @include media($medium-screen) {
-          margin-left: $icon-bullet-size *1.4;
           margin-bottom: 2em;
         }
         h2 {

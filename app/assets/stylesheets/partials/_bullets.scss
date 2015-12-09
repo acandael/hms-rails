@@ -22,29 +22,7 @@
     @include flex-grow(1);
   }
 
-  .bullet-icon {
-    background: $action-color;
-    border-radius: 50%;
-    float: left;
-    height: $icon-bullet-size;
-    padding: $icon-bullet-size / 4;
-    width: $icon-bullet-size;
-  }
-
-  .bullet-icon-1 {
-    background: $action-color;
-  }
-
-  .bullet-icon-2 {
-    background: adjust-hue($action-color, -50%);
-  }
-
-  .bullet-icon-3 {
-    background: adjust-hue($action-color, -140%);
-  }
-
   .bullet-content {
-    margin-left: $icon-bullet-size * 1.4;
     margin-bottom: 2em;
   }
 

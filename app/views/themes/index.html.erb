@@ -10,9 +10,6 @@
     <div class="bullets">
       <% themes.each do |theme| %>
           <div class="bullet">
-            <div class="bullet-icon bullet-icon-1">
-              <%= image_tag "logo-small-28x42.png" %>
-            </div>
             <div class="bullet-content">
               <h2><%= link_to theme.title, theme_path(theme) %></h2>
               <p><%= simple_format(theme.description) %></p>
