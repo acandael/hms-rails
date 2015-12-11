@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Publication do
   it { should belong_to(:category) }
   it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:category) }
   it { should have_many(:members) }
   it { should have_many(:themes) }
   it { should validate_length_of(:summary).is_at_most(400) }
