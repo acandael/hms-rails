@@ -1,15 +1,5 @@
 section.home {
     .hero {
-    $hero-background-top: lighten($green, 5); 
-    $hero-background-bottom: adjust-hue($hero-background-top, -5);
-    $hero-color: white;
-    $gradient-angle: 10deg;
-
-    @include background(linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
 
 
     margin-top: em(54);
@@ -31,12 +21,11 @@ section.home {
         }
       }
       @include outer-container;
-      //@include clearfix;
       padding: 2em;
       padding-bottom: 1em;
       margin: auto;
       text-align: center;
-      color: $hero-color;
+      color: green;
 
       @include media($medium-screen) {
         padding: 3em;
@@ -96,10 +85,9 @@ section.home {
     }
 
     background-color: white;
-    box-shadow: 0 1px 4px 1px $light-gray;
 
     .news-inner {
-      padding-top: .75em;
+      padding-top: 3em;
       padding-bottom: .75em;
       margin-bottom: em(20);
       padding-left: 1em;

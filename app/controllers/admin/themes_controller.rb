@@ -1,7 +1,7 @@
 class Admin::ThemesController < DashboardController
   before_action :find_theme, only: [:show, :edit, :update, :destroy]
   def index
-    @themes = Theme.all
+    @themes = Theme.all.order(title: :asc)
   end
 
   def show

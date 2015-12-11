@@ -1,7 +1,7 @@
 <% content_for(:title, "Publications") %>
 <section class="publications">
   <header>
-  <h1>Publications</h1>
+  <h1>Output</h1>
   </header>
   <div class="theme">
     <% @publications.group_by { |p| p.category.name }.each do |category, publications| %>
