@@ -1,0 +1,13 @@
+<section class="publications">
+  <header>
+    <h1>Output: <%= @category.name %></h1>
+  </header>
+<% if @publications.any? %>
+  <% @publications.each do |year, publications| %>
+    <h2><%= year %></h2>
+    <% publications.each do |pub| %>
+      <p><i class="fa fa-download"></i><%= link_to pub.title, attachment_url(pub, :document) %></p>
+    <% end %>
+  <% end %>
+<% end %>
+</section>

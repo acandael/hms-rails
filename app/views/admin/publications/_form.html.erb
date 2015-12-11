@@ -20,6 +20,10 @@
     <%= f.date_field :date %>
   </div>
   <div>
+    <%= f.label :year %>
+    <%= f.number_field :year, in:1990..2020 %>
+  </div>
+  <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>

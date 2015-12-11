@@ -10,7 +10,7 @@ describe 'Showing a publication' do
 
   it 'shows the publication details' do
     category = Category.create!(name: "presentation")
-    publication = Publication.create!(publication_attributes(category_id: category.id))
+    publication = Publication.create!(publication_attributes(year: 2015, category_id: category.id))
     member1 = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     member2 = Member.create!(name: "Geert Jacobs", email: "geert.jacobs@ugent.be")
     theme = Theme.create!(title: "theme 1", description: "description of theme 1")
@@ -22,6 +22,7 @@ describe 'Showing a publication' do
     publication.save
 
     visit admin_publication_path(publication)
+    expect(page).to have_text publication.year
     expect(page).to have_text publication.title
     expect(page).to have_text publication.description
     expect(page).to have_text publication.date.strftime('%d %B %Y')
