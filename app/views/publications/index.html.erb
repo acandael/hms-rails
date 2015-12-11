@@ -7,7 +7,7 @@
     <% @publications.group_by { |p| p.category.name }.each do |category, publications| %>
       <h2><%= category %></h2>
       <% publications.take(3).each do |publication| %>
-        <%= link_to publication.title, publication_path(publication) %>
+        <p><%= link_to publication.title, publication_path(publication) %></p>
       <% end %>
       <p class="more"><%= link_to "all publications for #{category}", publications_path(category) %></p>
     <% end %>
