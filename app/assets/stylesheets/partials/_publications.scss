@@ -1,11 +1,12 @@
 section.publications {
 
   .theme {
+    @include clearfix;
     background: white;
     padding: 2em;
     overflow: hidden;
-    margin-top: em(20);
-    margin-bottom: em(40);
+    margin-top: em(24);
+    margin-bottom: em(36);
     box-shadow: 0 1px 4px 1px $light-gray;
 
     h2 {

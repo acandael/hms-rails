@@ -3,12 +3,13 @@
   <header>
   <h1>Output</h1>
   </header>
-  <div class="theme">
     <% @publications.group_by { |p| p.category.name }.each do |category, publications| %>
+  <div class="theme">
       <h2><%= category %></h2>
       <% publications.take(3).each do |publication| %>
         <p><%= link_to publication.title, publication_path(publication) %></p>
       <% end %>
       <p class="more"><%= link_to "all publications for #{category}", publications_path(category) %></p>
+  </div>
     <% end %>
 </section>
