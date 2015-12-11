@@ -37,6 +37,13 @@ class Admin::MembersController < DashboardController
     redirect_to admin_members_path, notice: "Member successfully deleted"
   end
 
+  def sort
+    params[:member].each_with_index do |id, index|
+      Member.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
+  end
+
   private
   
   def find_member

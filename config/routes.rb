@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :news_articles
-    resources :members
+    resources :members do
+      collection { post :sort }
+    end
     resources :publications
     resources :themes
   end

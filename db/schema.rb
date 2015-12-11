@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211085437) do
+ActiveRecord::Schema.define(version: 20151211102659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,16 +42,17 @@ ActiveRecord::Schema.define(version: 20151211085437) do
   add_index "member_publications", ["publication_id"], name: "index_member_publications_on_publication_id", using: :btree
 
   create_table "members", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.text   "address"
-    t.string "image_id"
-    t.text   "bio"
-    t.string "title"
-    t.string "slug"
-    t.string "bibliography"
-    t.string "image_content_type"
+    t.string  "name"
+    t.string  "email"
+    t.string  "phone"
+    t.text    "address"
+    t.string  "image_id"
+    t.text    "bio"
+    t.string  "title"
+    t.string  "slug"
+    t.string  "bibliography"
+    t.string  "image_content_type"
+    t.integer "position"
   end
 
   add_index "members", ["slug"], name: "index_members_on_slug", unique: true, using: :btree
