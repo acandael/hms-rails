@@ -1,10 +1,10 @@
 class Admin::MembersController < DashboardController
-  before_action :find_member, only: [:show, :edit, :update, :destroy]
   def index
     @members = Member.all.order(name: :desc)
   end 
 
   def show
+    @member = find_member
   end
 
   def new
@@ -22,9 +22,11 @@ class Admin::MembersController < DashboardController
   end
 
   def edit
+    @member = find_member
   end
 
   def update
+    @member = find_member
     if @member.update(member_params)
       redirect_to admin_members_path, notice: "Member was successfully updated"
       else
@@ -33,6 +35,7 @@ class Admin::MembersController < DashboardController
   end
 
   def destroy
+    @member = find_member
     @member.destroy
     redirect_to admin_members_path, notice: "Member successfully deleted"
   end

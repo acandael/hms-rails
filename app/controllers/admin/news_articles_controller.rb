@@ -1,10 +1,10 @@
 class Admin::NewsArticlesController < DashboardController
-  before_action :find_news_article, only: [:show, :edit, :update, :destroy]
   def index
     @news_articles = NewsArticle.all.order(:created_at)
   end
 
   def show
+    @news_article = find_news_article
   end
 
   def new
@@ -22,9 +22,11 @@ class Admin::NewsArticlesController < DashboardController
   end
 
   def edit
+    @news_article = find_news_article
   end
 
   def update
+    @news_article = find_news_article
     if @news_article.update(news_article_params)
       redirect_to admin_news_articles_path, notice: 'News article successfully updated'
     else
@@ -33,6 +35,7 @@ class Admin::NewsArticlesController < DashboardController
     end
   end
   def destroy
+    @news_article = find_news_article
     @news_article.destroy
     redirect_to admin_news_articles_path, notice: "News article successfully deleted"
   end

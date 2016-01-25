@@ -1,10 +1,10 @@
 class Admin::ThemesController < DashboardController
-  before_action :find_theme, only: [:show, :edit, :update, :destroy]
   def index
     @themes = Theme.all.order(title: :asc)
   end
 
   def show
+    @theme = find_theme
   end
 
   def new
@@ -21,9 +21,11 @@ class Admin::ThemesController < DashboardController
   end
 
   def edit
+    @theme = find_theme
   end
 
   def update
+    @update = find_theme
     if @theme.update(theme_params)
       redirect_to admin_themes_path, notice: "Theme successfully updated"
     else
@@ -32,6 +34,7 @@ class Admin::ThemesController < DashboardController
   end
 
   def destroy
+    @theme = find_theme
     @theme.delete
     redirect_to admin_themes_path, notice: "Theme successfully deleted"
   end
