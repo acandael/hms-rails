@@ -37,7 +37,8 @@ describe 'viewing a theme' do
   end
 
   it "shows the theme's publications" do
-    publication = Publication.create(publication_attributes)
+    report = Category.create(name: "report")
+    publication = Publication.create(publication_attributes(category: report))
     theme.publications << publication
 
     visit theme_path(theme)

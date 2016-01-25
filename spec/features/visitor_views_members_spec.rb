@@ -17,7 +17,11 @@ describe 'viewing the members' do
   end
 
   it 'shows the member details when clicked' do
+    report = Category.create(name: "report")
+    publication = Publication.create(title: "some title", category: report)
     member = Member.create!(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be", title: "Postdoctoral Researcher")
+    member.publications << publication
+    member.save
 
     visit people_path
     click_link member.name

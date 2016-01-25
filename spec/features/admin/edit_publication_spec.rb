@@ -6,7 +6,8 @@ describe 'editing a publication' do
     sign_in(user)
   end
   it 'updates the publication details' do
-    publication = Publication.create!(title: 'publication title')
+    reports = Category.create(name: "reports")
+    publication = Publication.create!(title: 'publication title', category: reports)
     piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     geert = Member.create!(name: "Geert Jacobs", email: "geert.jacobs@ugent.be")
     Theme.create!(title: "theme 1", description: "description 1")
@@ -33,7 +34,8 @@ describe 'editing a publication' do
   end
 
   it 'does not update a publication with invalid  data' do
-    publication = Publication.create!(title: 'publication title')
+    reports = Category.create(name: "reports")
+    publication = Publication.create!(title: 'publication title', category: reports)
     visit admin_publications_path
     click_link 'Edit'
 

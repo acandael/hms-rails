@@ -8,12 +8,13 @@ describe 'showing a theme' do
   end
 
   it 'shows the theme details' do
+    report = Category.create(name: "report")
     theme = Theme.create!(title: "Stakeholder analysis", summary: "This is the summary", description: "This research line aims to chart the organizations")
 
     piet = Member.create!(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     sarah = Member.create!(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be")
-    pub1 = Publication.create!(title: "publication 1", description: "description of pub 1")
-    pub2 = Publication.create!(title: "publication 2", description: "description of pub 2")
+    pub1 = Publication.create!(title: "publication 1", description: "description of pub 1", category: report)
+    pub2 = Publication.create!(title: "publication 2", description: "description of pub 2", category: report)
     
     theme.members << piet
     theme.members << sarah

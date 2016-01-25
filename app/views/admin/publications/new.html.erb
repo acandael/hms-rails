@@ -3,5 +3,5 @@
     <%= link_to "Dashboard", admin_path %>
     <%= link_to "All Publications", admin_publications_path %>
   </div>
-  <%= render 'form' %>
+  <%= render 'form', publication: @publication %>
 </section>

@@ -11,7 +11,8 @@ describe 'Showing a member' do
   it 'shows the member details' do
     member = Member.create!(name: "Piet Bracke", title: "Professor",  email: "piet.bracke@ugent.be", phone: "32 (0)9 264 68 64", address: "Department of Sociology Korte Meer 5, 9000 Ghent (Belgium)", bio: "Piet Bracke is a full professor at the Department of Sociology at Ghent University")
 
-    publication = Publication.create!(title: "publication 1")
+    report = Category.create(name: "report")
+    publication = Publication.create!(title: "publication 1", category: report)
     member.publications << publication
     member.save
 

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe Admin::PublicationsController do
   before do
-    @publication = Publication.create!(publication_attributes)
+    report = Category.create(name: "report")
+    @publication = Publication.create!(publication_attributes(category: report))
   end
 
   context 'when not signed in' do

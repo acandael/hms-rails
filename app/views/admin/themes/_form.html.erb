@@ -1,14 +1,14 @@
-<%= form_for [:admin, @theme], :html => { class: "admin-add" } do |f| %>
+<%= form_for [:admin, theme], :html => { class: "admin-add" } do |f| %>
   <header>
     <h1>
-    <% if @theme.new_record? %>
+    <% if theme.new_record? %>
       New Theme
     <% else %>
       Edit Theme 
     <% end %>
     </h1>
   </header>
-  <%= render "shared/errors", object: @theme %>
+  <%= render "shared/errors", object: theme %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -21,7 +21,7 @@
     <%= f.label :image %>
     <div id="image"></div>
     <% if @theme.image_id? %>
-      <%= image_tag attachment_url(@theme, :image, :fill, 150, 150) %>
+      <%= image_tag attachment_url(theme, :image, :fill, 150, 150) %>
       <div class="check_box">
         <%= f.check_box :remove_image %>
         <%= f.label :remove_image %>

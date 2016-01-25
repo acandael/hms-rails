@@ -7,7 +7,8 @@ describe 'deleting a publication' do
   end
 
   it 'does not show the publication in the publication list' do
-    Publication.create!(title: 'publication 1')
+    report = Category.create(name: "report")
+    Publication.create!(title: 'publication 1', category: report)
     visit admin_publications_path
 
     click_link 'Delete'

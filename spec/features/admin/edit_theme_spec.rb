@@ -11,8 +11,9 @@ describe 'Editing a theme' do
     theme = Theme.create!(title: "Stakeholder analysis", description: "This research line aims to chart the organizations")
     Member.create(name: "Piet Bracke", email: "piet.bracke@ugent.be")
     Member.create(name: "Sarah Van Leuven", email: "sarah.vanleuven@ugent.be")
-    Publication.create!(title: "publication 1", description: "description of publication 1")
-    Publication.create!(title: "publication 2", description: "description of publication 2")
+    report = Category.create(name: "report")
+    Publication.create!(title: "publication 1", description: "description of publication 1", category: report)
+    Publication.create!(title: "publication 2", description: "description of publication 2", category: report)
     visit admin_themes_path
     click_link 'Edit'
 

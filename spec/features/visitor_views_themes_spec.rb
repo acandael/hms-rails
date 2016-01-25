@@ -31,8 +31,13 @@ describe 'viewing the themes' do
   end
 
   it 'goes to the member page when a member name is clicked' do
+    report = Category.create(name: "report")
+    publication = Publication.create(title: "some publication", category: report)
     theme = Theme.create!(theme_attributes)
+    theme.publications << publication
+    theme.save
     researcher = Member.create!(member_attributes)
+
 
     theme.members << researcher
 

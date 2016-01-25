@@ -3,7 +3,8 @@ require 'rails_helper'
 describe 'viewing a member' do
   let(:member) { Member.create!(member_attributes) }
   let(:theme) { Theme.create!(theme_attributes) }
-  let(:publication) { Publication.create!(publication_attributes) }
+  let(:category) { Category.create!(name: "report") }
+  let(:publication) { Publication.create!(publication_attributes(category: category)) }
   before do
     member.themes << theme
     member.publications << publication
