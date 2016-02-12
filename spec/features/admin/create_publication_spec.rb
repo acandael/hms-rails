@@ -24,6 +24,7 @@ describe 'creating a publication' do
    fill_in "Link", with: "http://www.ugent.be/ps"
    check piet.name
    check geert.name
+   fill_in "External authors", with: "Rebeca De Dobbelaer, Bart Vanhaelewyn"
 
    click_button "Create Publication"
   
@@ -34,6 +35,7 @@ describe 'creating a publication' do
    expect((Publication.last).summary).to eq 'this is a summary'
    expect((Publication.last).link).to eq 'http://www.ugent.be/ps'
    expect((Publication.last).members.count).to eq 2
+   expect((Publication.last).external_authors).to eq "Rebeca De Dobbelaer, Bart Vanhaelewyn"
    expect((Publication.last).date).to eq "12 June 2015".to_date
   end
 

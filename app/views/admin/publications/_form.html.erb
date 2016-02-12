@@ -50,6 +50,10 @@
      <% end %>
   </div>
   <div>
+    <%= f.label :external_authors, "External authors" %>
+    <%= f.text_field :external_authors %>
+  </div>
+  <div>
     <%= f.label :document %>
     <% if publication.document_id? %>
       <div class="attachment">

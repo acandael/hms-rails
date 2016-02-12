@@ -31,7 +31,6 @@
     <% end %>
   </div>
   <div class="content">
-    <% if @publication.members.any? %>
       <p class="authors">Authors:&nbsp;
         <% @publication.members.each do |member| %>
           <%= link_to member.name, member_path(member) %>
@@ -39,8 +38,10 @@
             ,&nbsp;
           <% end %>
         <% end %>
+        <% if @publication.external_authors.present? %>
+          , &nbsp;<%= @publication.external_authors %>
+        <% end %>
       </p>
-    <% end %>
   </div>
   <% if @publication.document_id? %>
   <div class="download">

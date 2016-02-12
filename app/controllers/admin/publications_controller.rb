@@ -47,7 +47,13 @@ class Admin::PublicationsController < DashboardController
   private
 
   def publication_params
-    params.required(:publication).permit(:date, :year, :title, :category_id, :description, :summary, :link, :document, :remove_document, :theme_ids => [], :member_ids => [])
+    params.required(:publication).permit(:date, :year, :title, :category_id,
+                                         :description, :summary, :link,
+                                         :document, :remove_document,
+                                         :external_authors,
+                                         :theme_ids => [],
+                                         :member_ids => [],
+                                         )
   end
 
   def category_selected?
