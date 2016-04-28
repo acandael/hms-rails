@@ -1,6 +1,6 @@
 class ThemesController < ApplicationController
   def index
-    @themes = Theme.all
+    @themes = Theme.includes(:members).all
   end
 
   def show
