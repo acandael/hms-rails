@@ -6,8 +6,6 @@ section.news {
     }
   }
   article {
-
-
     h2 {
       font-size: $base-font-size * 1;
       @include media($medium-screen) {
@@ -26,6 +24,21 @@ section.news {
 
     footer {
       font-style: italic;
+    }
+  }
+
+  div.newsfeed {
+    @include media($medium-screen){
+      @include span-columns(7);
+    }
+  }
+
+  div.twitter {
+    margin-top: 2.25em;
+    @include media($medium-screen){
+      @include span-columns(4);
+      @include shift(1);
+      @include omega();
     }
   }
 }
