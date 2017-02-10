@@ -22,7 +22,7 @@ html, body {
 }
 
 section {
-  @include outer-container;
+  @include outer-container(80%);
   padding-left: em(10);
   padding-right: em(10);
   margin-left: em(10);
@@ -32,7 +32,7 @@ section {
     margin-right: auto; 
   }
   header {
-    margin-top: 2.5em;
+    margin-top: 3.375em;
     margin-bottom: 2.5em;
     text-align: center;
   }
