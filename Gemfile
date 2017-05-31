@@ -66,6 +66,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.2.1'
   gem 'bundler-audit'
   gem 'brakeman', :require => false
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-rails', '~> 0.3.2'
 end
 
 group :test do

@@ -11,7 +11,7 @@ class Publication < ActiveRecord::Base
   attachment :document
 
   scope :filter_by_category, ->(category){ filter(category).order(:title) }
-  scope :sort_by_category, ->(category_id){ all.where(category_id: category_id).order('created_at desc') }
+  scope :sort_by_category, ->(category_id){ all.where(category_id: category_id).order('year desc') }
   scope :grouped_by_year, ->{ order(year: :desc).group_by { |p| p.year} }
   private
 
